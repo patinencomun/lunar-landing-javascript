@@ -1,4 +1,4 @@
-var y = 10; // altura inicial y0=10%, debe leerse del css
+var y = 10; // altura inicial y0=10%, debe leerse al iniciar si queremos que tenga alturas diferentes dependiendo del dispositivo
 var v = 0;
 var g = 1.622;
 var a = g;
@@ -28,7 +28,7 @@ function stop(){
 }
 
 function moverNave(){
-	v +=g*dt;
+	v +=a*dt;
 	document.getElementById("velocidad").innerHTML=v;
 	y +=v*dt;
 	document.getElementById("altura").innerHTML=y;
