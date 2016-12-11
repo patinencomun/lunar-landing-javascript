@@ -5,20 +5,36 @@ var a = g;
 var dt = 0.016683;
 var timer;
 
+//al cargar por completo la página...
 window.onload = function(){
-    document.getElementById("showm").onclick = function () {
+	//definición de eventos
+	//mostrar menú móvil
+    	document.getElementById("showm").onclick = function () {
 		document.getElementsByClassName("c")[0].style.display = "block";
 		stop();
 	}
+	//ocultar menú móvil
 	document.getElementById("hidem").onclick = function () {
 		document.getElementsByClassName("c")[0].style.display = "none";
 		start();
 	}
+	//encender/apagar el motor al hacer click en la pantalla
+	document.onclick = function () {
+ 	  if (a==g){
+  		motorOn();
+ 	  } else {
+  		motorOff();
+ 	  }
+	}
+	//encender/apagar al apretar/soltar una tecla
+	document.onkeydown = motorOn;
+	document.onkeyup = motorOff;
+	
 	//Empezar a mover nave
 	start();
 }
 
-
+//Definición de funciones
 function start(){
 	timer=setInterval(function(){ moverNave(); }, dt*1000);
 }
@@ -39,4 +55,10 @@ function moverNave(){
 	} else { 
 		stop();
 	}
+}
+function motorOn(){
+ a=-g;
+}
+function motorOff(){
+ a=g;
 }
