@@ -3,7 +3,9 @@ var v = 0;
 var g = 1.622;
 var a = g;
 var dt = 0.016683;
-var timer;
+var timer=null;
+var timerFuel=null;
+var fuel=100;
 
 //al cargar por completo la página...
 window.onload = function(){
@@ -57,8 +59,17 @@ function moverNave(){
 	}
 }
 function motorOn(){
- a=-g;
+	a=-g;
+	if (timerFuel==null)
+	timerFuel=setInterval(function(){ actualizarAltura(); }, 100);	
 }
 function motorOff(){
- a=g;
+	a=g;
+	clearInterval(timerFuel);
+	timerFuel=null;
+}
+function actualizarAltura(){
+	//Aquí hay que cambiar el valor del marcador de Fuel...
+	fuel-=1;
+	document.getElementById("fuel").innerHTML=fuel;	
 }
