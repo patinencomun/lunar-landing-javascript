@@ -1,12 +1,18 @@
-var y = 10; // altura inicial y0=10%, debe leerse al iniciar si queremos que tenga alturas diferentes dependiendo del dispositivo
-var v = 0;
+
+//ENTORNO
 var g = 1.622;
-var a = g;
 var dt = 0.016683;
 var timer=null;
 var timerFuel=null;
-var fuel=100;
-
+//NAVE
+var y = 10; // altura inicial y0=10%, debe leerse al iniciar si queremos que tenga alturas diferentes dependiendo del dispositivo
+var v = 0;
+var combustible=100;
+var a = g; //la aceleración cambia cuando se enciende el motor de a=g a a=-g (simplificado)
+//MARCADORES (element)
+var velocidad = document.getElementById("velocidad");
+var altura = document.getElementById("altura");
+var marcadorCombustible = document.getElementById("fuel");
 //al cargar por completo la página...
 window.onload = function(){
 	//definición de eventos
@@ -32,12 +38,13 @@ window.onload = function(){
 	document.onkeydown = motorOn;
 	document.onkeyup = motorOff;
 	
-	//Empezar a mover nave
+	//Empezar a mover la nave justo después de cargar la página
 	start();
 }
 
 //Definición de funciones
 function start(){
+	//cada intervalo de tiempo mueve la nave
 	timer=setInterval(function(){ moverNave(); }, dt*1000);
 }
 
@@ -46,10 +53,12 @@ function stop(){
 }
 
 function moverNave(){
+	//cambiar velocidad y posicion
 	v +=a*dt;
-	document.getElementById("velocidad").innerHTML=v;
 	y +=v*dt;
-	document.getElementById("altura").innerHTML=y;
+	//actualizar marcadores
+	velocidad.innerHTML=v;
+	altura.innerHTML=y;
 	
 	//mover hasta que top sea un 70% de la pantalla
 	if (y<70){ 
@@ -59,7 +68,9 @@ function moverNave(){
 	}
 }
 function motorOn(){
+	//el motor da aceleración a la nave
 	a=-g;
+	//mientras el motor esté activado gasta combustible
 	if (timerFuel==null)
 	timerFuel=setInterval(function(){ actualizarFuel(); }, 10);	
 }
@@ -70,6 +81,7 @@ function motorOff(){
 }
 function actualizarFuel(){
 	//Aquí hay que cambiar el valor del marcador de Fuel...
-	fuel-=0.1;
-	document.getElementById("fuel").innerHTML=fuel;	
+	combustible-=0.1;
+	if (combustible < 0 ) combustible = 0;
+	marcadorCombustible.innerHTML=combustible;	
 }
