@@ -87,7 +87,7 @@ function motorOff(){
 	timerFuel=null;
 }
 function actualizarFuel(){
-	//Aquí hay que cambiar el valor del marcador de Fuel...
+	//Restamos combustible hasta que se agota
 	c-=0.1;
 	if (c < 0 ) c = 0;
 	combustible.innerHTML=c;	
