@@ -1,4 +1,4 @@
-# lunar-landing-javascript
+# Lunar lander con html, css y javascript
 Versión esqueleto del juego Lunar Landing que incluye:
 
 * Html con los elementos básicos del juego
