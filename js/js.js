@@ -7,14 +7,21 @@ var timerFuel=null;
 //NAVE
 var y = 10; // altura inicial y0=10%, debe leerse al iniciar si queremos que tenga alturas diferentes dependiendo del dispositivo
 var v = 0;
-var combustible=100;
+var c = 100;
 var a = g; //la aceleración cambia cuando se enciende el motor de a=g a a=-g (simplificado)
-//MARCADORES (element)
-var velocidad = document.getElementById("velocidad");
-var altura = document.getElementById("altura");
-var marcadorCombustible = document.getElementById("fuel");
+//MARCADORES
+var velocidad = null;
+var altura = null;
+var combustible = null;
+
 //al cargar por completo la página...
 window.onload = function(){
+	
+	velocidad = document.getElementById("velocidad");
+	altura = document.getElementById("altura");
+	combustible = document.getElementById("fuel");
+
+	
 	//definición de eventos
 	//mostrar menú móvil
     	document.getElementById("showm").onclick = function () {
@@ -81,7 +88,7 @@ function motorOff(){
 }
 function actualizarFuel(){
 	//Aquí hay que cambiar el valor del marcador de Fuel...
-	combustible-=0.1;
-	if (combustible < 0 ) combustible = 0;
-	marcadorCombustible.innerHTML=combustible;	
+	c-=0.1;
+	if (c < 0 ) c = 0;
+	combustible.innerHTML=c;	
 }
