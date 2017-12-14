@@ -1,9 +1,76 @@
 body,html{height:100%;padding:0px;margin:0px;}
-.a{background-color:#00bcd4;width:100%;height:90px;overflow:hidden;position:fixed;top:0px}
-.b{background-color:red;width:100%;height:100%;overflow:hidden;}
-.c{background-color:#cddc39;position:fixed;top:0px;bottom:0px;left:0px;right:0px;display:none;z-index:1}
-.d{background-color:pink;position:fixed;bottom:0px;height:10%;width:100%;}
-#nave{text-align:center;position:fixed;top:10%;width:100%;height:20%}
+body{background:url(../img/cielo.jpeg) no-repeat fixed center;}
+
+.a{	
+	width:100%;
+	height:90px;
+	overflow:hidden;
+	position:fixed;
+	top:0px
+	}
+	
+.b{
+	width:100%;
+	height:100%;
+	overflow:hidden;
+	}
+	
+.c{	
+	position:fixed;
+	top:0px;
+	bottom:0px;
+	left:0px;
+	right:0px;
+	display:none;
+	z-index:1
+	}
+	
+#m1a{	
+	width:100%;
+	max-width:92%;
+	margin:2%;
+	background-color:red;
+	border-style: solid;
+	border-width: 11px;
+    border-color: grey;
+}
+#fuel{
+	width:100%;	
+	max-width:100%;
+	background-color:#00d000;
+}
+	
+.luna{
+	z-index:1;
+	text-align:center;
+	position:fixed;
+	bottom:0px;
+	height:16%;
+	width:100%;
+	}
+	
+.luna img{height:100%;}
+
+/*#nave{
+	z-index:2;
+	background:url(../img/180x90spriteNave1.png) 0 0;
+	position:fixed;
+	top:5%;
+	left:36%;
+	width:90px;
+	height:90px;
+	}*/
+	
+#nave{
+	z-index:2;
+	text-align:center;
+	position:fixed;
+	top:5%;width:100%;
+	height:20%
+	}
+	
 #nave img{height:100%;}
+
 #cpanel{}
+
 #hidem,#showm{float:right}

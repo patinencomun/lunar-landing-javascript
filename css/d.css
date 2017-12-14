@@ -1,10 +1,70 @@
 body,html{height:100%;padding:0px;margin:0px;}
-.a{background-color:#00bcd4;}
-.b{background-color:red;}
-.c{background-color:#cddc39;display:block !important}
-.a,.b,.c{display:inline-block;width:33.33%;height:100%;float:left;}
-.d{background-color:pink;height:10%;width:100%;position:fixed;bottom:0px;}
-#nave{text-align:center;position:fixed;top:10%;width:100%;height:20%}
+body{background:url(../img/cielo.jpeg) no-repeat fixed center;}
+
+.a{}
+/*.b{background-color:red;}*/
+
+.c{	
+	display:block !important
+	}
+	
+.a,.b,.c{
+	display:inline-block;
+	width:33.33%;
+	height:100%;
+	float:left;
+	}
+/*.d{height:100%;}*/
+
+#m1a{	
+	width:100%;
+	max-width:92%;
+	margin:2%;
+	background-color:red;
+	border-style: solid;
+	border-width: 11px;
+    border-color: grey;
+}
+#fuel{
+	width:100%;	
+	max-width:100%;
+	background-color:#00d000;
+}
+
+.luna{
+	z-index:1;
+	text-align:center;	
+	height:17%;
+	width:100%;
+	position:fixed;
+	bottom:0px;
+	}
+	
+.luna img{height:100%;}
+
+/*#nave{z-index:2;background:url(../img/314x158spriteNave1.png) 0 0;position:fixed;top:5%;left:42%;width:157px;height:158px;}*/
+
+#nave{
+	z-index:2;
+	text-align:center;
+	position:fixed;
+	top:5%;
+	width:100%;
+	height:20%
+	}
+	
 #nave img{height:100%;}
+
 #cpanel{}
+
 #hidem,#showm{display:none}
+
+
+/*<div class="a">
+    <div id="showm">show menu</div>
+    <ul id="cpanel">
+	  <li>Fuel <span id="fuel">100</span> l</li>
+	  <li>Altura <span id="altura">70</span> m</li>
+      <li>Velocidad <span id="velocidad">100</span> m/s</li>  
+    </ul>
+  </div>*/
