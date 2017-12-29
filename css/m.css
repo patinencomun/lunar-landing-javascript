@@ -1,76 +1,274 @@
 body,html{height:100%;padding:0px;margin:0px;}
 body{background:url(../img/cielo.jpeg) no-repeat fixed center;}
+	
+.a{
+	text-align:left;
+	position:fixed;
+	top:3%;
+	left:2%;
+	width:27%;
+	height:35%;
+}
 
-.a{	
-	width:100%;
-	height:90px;
-	overflow:hidden;
-	position:fixed;
-	top:0px
-	}
-	
-.b{
-	width:100%;
-	height:100%;
-	overflow:hidden;
-	}
-	
-.c{	
-	position:fixed;
-	top:0px;
-	bottom:0px;
-	left:0px;
-	right:0px;
-	display:none;
-	z-index:1
-	}
-	
-#m1a{	
+.m1a{	
 	width:100%;
 	max-width:92%;
-	margin:2%;
+	margin:5%;
+	margin-bottom:10%;
 	background-color:red;
 	border-style: solid;
-	border-width: 11px;
+	border-width: 5px;
     border-color: grey;
 }
+.m1b img{width:100%}
+
+.m1b{
+	position:relative;	
+	width:100%;
+	max-width:100%;
+	margin:5%;
+
+}
+
 #fuel{
-	width:100%;	
+	height:100%;
 	max-width:100%;
 	background-color:#00d000;
+	font-size:2vw; /*barra con menos altura, cambiando el tamaño del espacio*/
 }
-	
-.luna{
-	z-index:1;
-	text-align:center;
-	position:fixed;
-	bottom:0px;
-	height:16%;
-	width:100%;
-	}
-	
-.luna img{height:100%;}
 
-/*#nave{
-	z-index:2;
-	background:url(../img/180x90spriteNave1.png) 0 0;
-	position:fixed;
-	top:5%;
-	left:36%;
-	width:90px;
-	height:90px;
-	}*/
-	
+
+.numero{
+	position:absolute;
+	right:3%;
+	top:15%;
+	color:black;
+	text-align:center;
+	font-family: 'Arial';
+	font-size:3vw;
+	background-color:#b0b5c5;
+	padding:3%;
+}
+
 #nave{
 	z-index:2;
 	text-align:center;
 	position:fixed;
-	top:5%;width:100%;
-	height:20%
+	top:5%;
+	width:100%;
+	height:17%;  /*nave más pequeña en la versión móvil*/
 	}
 	
-#nave img{height:100%;}
+#nave img{
+	height:85%;
+	margin-left:6%; /*para centrar la nave*/
+}
+	
+.c{
+	z-index:3;
+	/*text-align:right;*/
+	position:fixed;
+	top:3%;
+	right:-25%;
+	width:48%;
+}
+
+.botonC:hover {background-color: #0043E1;}
+.botonC:active {background-color: transparent;}
+
+.botonC {
+	/*display:block; botones uno encima de otro*/
+	width:40%;
+	padding:2%;
+	margin-bottom:10%;
+}
+	
+
+.botonC img{width:100%;}
+
+#botonPower {
+	z-index:4;
+	text-align:center;
+	position:fixed;
+	bottom:1%;
+	right:3%;
+	width:25%;
+}
+
+#botonPower img{
+	max-width:100%;
+}
+
+.menu {
+	z-index:5;
+	text-align:center;
+	position:fixed;
+	top:37%;
+	left:12%;
+	width:73%;
+	height:22%;
+	background-color:yellow;
+	outline-style: solid;
+	outline-width: 8px;
+    outline-color: grey;
+	display:none;
+	padding:2%;
+}
+
+#botonMenu1:hover {background-color: #0043E1;}
+#botonMenu2:hover {background-color: #0043E1;}
+#botonMenu3:hover {background-color: #0043E1;}
+/*#hidem:hover {background-color: #0043E1;}*/
+
+#botonMenu1{
+	position:absolute;
+	top:0%;
+	left:0%;
+	height:27%;
+	max-width:100%;
+	padding:2%;
+}
+
+#botonMenu2{
+	position:absolute;
+	top:33%;
+	left:0%;
+	height:27%;
+	max-width:100%;
+	padding:2%;
+}
+
+#botonMenu3{
+	position:absolute;
+	top:66%;
+	left:0%;
+	height:27%;
+	max-width:100%;
+	padding:2%;
+}
+
+.menu img {
+	max-width:100%;
+	max-height:100%;
+	height:100%;
+}
+
+#dificultad {
+	z-index:5;
+	text-align:center;
+	font-family: 'Arial';
+	font-size:2.5vw;
+	position:fixed;
+	top:31%;
+	left:15%;
+	width:70%;
+	height:45%;
+	background-color:yellow;
+	outline-style: solid;
+	outline-width: 8px;
+    outline-color: grey;
+	display:block;
+}
+
+#bloque1{
+	
+}
+#bloque2{
+	
+}
+#bloque3{
+	height:20%;
+}
+
+.icono{
+	height:16%;
+	margin:2%;
+}
+
+.icono img {
+	width:22%;
+	height:100%;
+	max-height:100%;
+}
+
+#facil:hover {background-color: #0043E1;}
+#dificil:hover {background-color: #0043E1;}
+
+.botonDificultad {
+	display:inline-block;	
+	position:relative;	
+	width:40%;
+	height:100%;
+	max-height:90%;
+	padding:1%;
+}
+
+.botonDificultad img {
+	height:74%;
+	max-height:100%;
+	max-width: 100%;
+	padding:4%;
+}
+
+
+.luna{
+	z-index:1;
+	text-align:center;	
+	height:20%;
+	width:100%;
+	position:fixed;
+	bottom:0px;
+	}
+	
+.luna img{
+	height:100%;
+	width:80%;
+	margin-left:5%;
+}
+
+#final1, #final2 {
+	z-index:5;
+	text-align:center;
+	font-family: 'Arial';
+	font-size:2.5vw;
+	position:fixed;
+	top:35%;
+	left:18%;
+	width:60%;
+	height:13%;
+	background-color:yellow;
+	border-style: solid;
+	border-width: 8px;
+    border-color: grey;
+	display:none;
+}
+
+.reiniciar {
+	position:absolute;
+	max-width:100%;
+	padding:2%;
+}
+
+.reiniciar img{
+	width:100%;
+}
+
+.reiniciar:hover {
+	background-color: #0043E1;
+}
 
 #cpanel{}
 
-#hidem,#showm{float:right}
+
+
+/*#hidem,#showm{display:none}*/
+
+
+/*<div class="a">
+    <div id="showm">show menu</div>
+    <ul id="cpanel">
+	  <li>Fuel <span id="fuel">100</span> l</li>
+	  <li>Altura <span id="altura">70</span> m</li>
+      <li>Velocidad <span id="velocidad">100</span> m/s</li>  
+    </ul>
+  </div>*/

@@ -1,32 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Lunar Lander</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel='stylesheet' media='screen and (min-width: 771px)' href='css/d.css'>
-  <link rel='stylesheet' media='screen and (max-width: 770px)' href='css/m.css'>
-  <script src="js/js.js"></script>
+	<title>Lunar Lander</title>
+    <meta name="description" content="Juego de naves">
+    <meta charset='UTF-8'/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' media='screen and (min-width: 771px)' href='css/d.css'>
+    <link rel='stylesheet' media='screen and (max-width: 770px)' href='css/m.css'>
+    <script src="js/js.js"></script>
 </head>
 <body>
-  <div id="nave"><img id='n' src="img/cohete.png" alt="img nave"></div>
-  <div class="a">
-    <div id="showm">show menu</div>
-    <ul id="cpanel">
-	  <li id='m1a'><div id="fuel">&nbsp;</div></li>
-	  <li>Altura <span id="altura">70</span> m</li>
-      <li>Velocidad <span id="velocidad">100</span> m/s</li>  
-    </ul>
-  </div>
-  <div class="b">b</div>
-  <div class="c">
-    <div id="hidem">hide menu</div>
-    <ul id="menu">
-      <li>Jugar</li>
-      <li>Instrucciones</li>
-      <li>Acerca de...</li>
-    </ul>
-  </div>
-  <div class="luna"><img src="img/luna.png" alt="img luna.png"/></div>
+    <div id="nave"><img id='n' src="img/cohete.png" alt="NAVE"></div>
+    <div class="a">       
+		<div class='m1a'><div id="fuel">&nbsp;</div></div>
+		<div class='m1b'><div id="altura" class='numero'>70</div><img src="img/altura2.png" alt="Altura"></div>
+		<div class='m1b'><div id="velocidad" class='numero'>0</div><img src="img/velocidad2.png" alt="Velocidad"></div>  
+	</div>  
+	<div class="c">  	            
+        <div class='botonC' id='cambiarNave'><img src="img/cambiar.png" alt="Cambiar de nave"/></div>
+        <div class='botonC'><img id="showm" src="img/botonMenu.png" alt="Menu"/></div>           
+    </div>
+    <div class="menu">
+        <div id='botonMenu1'><a href='file:///C:/Users/miaad/Desktop/Llenguatge%20de%20marques/LM_PRACTICA4/v0.5/index.html'><img src="img/reiniciar1.png" alt="Reiniciar"/></a></div>
+	    <div id='botonMenu2'><a href='https://rawgit.com/MariaAdrover/LM_PRACTICA3/master/instruccionesLunarLander.html'><img src="img/instrucciones1.png" alt="Instrucciones"/></a></div>
+	    <div id='botonMenu3'><img id='hidem' src="img/VOLVER.png" alt="Instrucciones"/></div>
+    </div>
+    <div class="luna"><img src="img/luna.png" alt="LUNA"/></div>
+    <div id='botonPower'><img id='power' src="img/powerOFF.png" alt="POWER"/></div>
+    <div id='dificultad'>
+		<div id='bloque1'><br><b>Aterriza a menos de 5m/s para no estrellarte</b><br></div>	
+	    <div class='icono'><img src="img/cambiar.png" alt="Elige Nave"/> Elige tu nave</div>	  
+	    <div class='icono'><img src="img/powerON.png" alt="motor"/> Activa o desactiva el motor</div>	
+	    (En PC utiliza también la tecla ESPACIO)<br>	  
+		<div class='icono'><img src="img/botonMenu.png" alt="Menu"/> Despliega el menú durante el juego</div>
+		<br><b>Selecciona el nivel de dificultad para iniciar el juego</b><br>
+		<div id='bloque3'>
+			<div class='botonDificultad'><img id='facil' src='img/botonFacil.png' alt='FACIL'/></div>
+			<div class='botonDificultad'><img id='dificil' src='img/botonDificil.png' alt='DIFICIL'/></div>
+		</div>
+    </div>
+    <div id='final1'>
+		<br>Enhorabuena!<br>Has aterrizado a <span class='velFinal'>0</span>m/s<br>Pulsa en el botón si quieres volver a jugar
+		<div class='reiniciar'><a href='file:///C:/Users/miaad/Desktop/Llenguatge%20de%20marques/LM_PRACTICA4/v0.5/index.html'><img src="img/reiniciar1.png" alt="Reiniciar"/></a></div>
+    </div>
+    <div id='final2'>
+		<br>Te has estrellado!<br>Has aterrizado a <span class='velFinal'>0</span>m/s<br>Pulsa en el botón si quieres volver a jugar
+		<div class='reiniciar'><a href='file:///C:/Users/miaad/Desktop/Llenguatge%20de%20marques/LM_PRACTICA4/v0.5/index.html'><img src="img/reiniciar1.png" alt="Reiniciar"/></a></div>
+    </div>
 </body>
 </html>
