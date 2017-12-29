@@ -1,8 +1,29 @@
 # Lunar lander con html, css y javascript
 
+## Versión 0.5
+
+Previsualización: https://rawgit.com/MariaAdrover/lunar-landing-javascript/v0.5/index.html
+
+* CSS versión escritorio y versión móvil revisados
+* He rediseñado el botón de aceleración 
+* Agregado panel inicial para empezar el juego:
+  * Instrucciones 
+  * Selección de dificultad
+* Eliminado el botón de selección de dificultad del menú desplegable
+* Final del juego:
+  * Implementados dos posibles finales
+  * Diseño de las imágenes del final
+  * Diseño e implementación de botón para volver a jugar
+* ARREGLAR:
+  * Botón y enlace ABOUT
+  * Enlace a página de instrucciones
+  * Alerta de que se va a salir de la página
+
 ## Versión 0.4
 
 Previsualización: https://rawgit.com/MariaAdrover/lunar-landing-javascript/v0.4/index.html
+
+* He vuelto a escribir el código JavaScript 
 
 ## Versión 0.3
 
