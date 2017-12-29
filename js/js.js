@@ -14,6 +14,7 @@ var c = 100;
 var a = g; //la aceleración cambia cuando se enciende el motor de a=g a a=-g (simplificado)
 var vAterrizaje; //velocidad de aterrizaje
 var nave=1; //Identificador de los modelos de naves
+var motorON=false;
 var aterrizado = false; 
 var sinCombustible = false; 
 
@@ -100,7 +101,7 @@ function botonPower (){
 	//Enciende el motor si ha empezado el juego y no hemos aterrizado, y si hay combustible
 	if (juegoEmpezado == true && pause == false && aterrizado == false && sinCombustible == false){
 		if (a == g){
-			motorOn();
+			motorOn();			
 		}else {
 			motorOff();
 		}
@@ -133,10 +134,18 @@ function cambiarNave(){
 		nave=1;
 	}
 	
-	if (nave==1){
-		document.getElementById('n').src='img/cohete.png';
+	if (motorON){
+		if (nave==1){
+			document.getElementById('n').src='img/coheteFuego.png';
+		}else{
+			document.getElementById('n').src='img/cohete2Fuego.png';
+		}
 	}else{
-		document.getElementById('n').src='img/cohete2.png';
+		if (nave==1){
+			document.getElementById('n').src='img/cohete.png';
+		}else{
+			document.getElementById('n').src='img/cohete2.png';
+		}
 	}
 }
 
@@ -196,10 +205,13 @@ function motorOn(){
 	//el motor da aceleración a la nave	
 	if (aterrizado == false && c>0){ //Al acelerar sale fuego de la nave, pero sólo si queda combustible y no hemos aterrizado
 		a=-g;
+		motorON=true;
 		if (nave==1){
 			document.getElementById("n").src = "img/coheteFuego.png"
+			//motorON=true;
 		}else{
 			document.getElementById("n").src = "img/cohete2Fuego.png"
+			//motorON=true;
 		}
 	}else{ 
 		motorOff();
@@ -214,6 +226,7 @@ function motorOff(){
 	a=g;
 	clearInterval(timerFuel);
 	timerFuel=null;
+	motorON = false;
 	//Cambio la imagen de la nave: sin fuego
 	if (aterrizado == false) {
 		if (nave==1){
