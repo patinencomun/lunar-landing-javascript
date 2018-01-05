@@ -42,6 +42,7 @@ window.onload = function(){
  
 		// Si deseamos que una vez cargado empieze a sonar...
 		audioElement.setAttribute('autoplay', 'autoplay');
+	audioElement.autoplay=true;
 		
 // creamos el objeto audio2
 		//var audioElement2 = document.createElement('audio');
