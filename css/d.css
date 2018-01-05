@@ -210,6 +210,16 @@ body{background:url(../img/cielo.jpeg) no-repeat fixed center;}
 	padding:4%;
 }
 
+#contador3 {
+	display:none;
+	position:fixed;
+	top:43%;
+	left:48%;
+	font-family: 'Arial';
+	font-size:7vw;
+	color:white;
+}
+
 /*.botonMenu {
 	text-align:center;
 	position:absolute;

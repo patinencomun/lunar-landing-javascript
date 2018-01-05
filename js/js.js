@@ -23,10 +23,24 @@ var velocidad = null;
 var altura = null;
 var combustible = null;
 
+var nContador;
+var contador;
+
 //al cargar por completo la página...
 window.onload = function(){	
+
+
+
+// creamos el objeto audio
+		var audioElement = document.createElement('audio');
+ 
+		// indicamos el archivo de audio a cargar
+		audioElement.setAttribute('src', '8-bit-Arcade4-nosfx.mp3');
+ 
+		// Si deseamos que una vez cargado empieze a sonar...
+		audioElement.setAttribute('autoplay', 'autoplay');
 	
-	
+//************************************	
 	
 	velocidad = document.getElementById("velocidad");
 	altura = document.getElementById("altura");
@@ -85,16 +99,36 @@ window.onload = function(){
 function nivelFacil (){
 	document.getElementById('dificultad').style.display='none';
 	juegoEmpezado = true;
-	start();
+	nContador = 2;
+	document.getElementById('contador3').style.display='block';		
+	contador=setInterval(cuentaAtras,1000);
 }
 
 function nivelDificil (){
+	/*audioElement.setAttribute('pause', 'pause');
+var audioElement = document.createElement('audio');	
+	audioElement.setAttribute('src', 'Fast Ace.wav');
+	audioElement.setAttribute('autoplay', 'autoplay');*/
+	
 	document.getElementById('dificultad').style.display='none';
 	v=15;
 	c=60;
 	combustible.style.width="60%";
 	juegoEmpezado = true;
-	start();
+	nContador = 2;
+	document.getElementById('contador3').style.display='block';		
+	contador=setInterval(cuentaAtras,1000);
+}
+
+function cuentaAtras() {
+	if(nContador>0){
+		document.getElementById('contador3').innerHTML=nContador;
+	}else{
+		clearInterval(contador);
+		document.getElementById('contador3').style.display='none';
+		start();
+	}
+	nContador--;	
 }
 
 function botonPower (){	
@@ -253,7 +287,7 @@ function actualizarFuel(){
 }
 
 function finalJuego(){
-	if (v>5){
+	if (v>4){
 		document.getElementById('final2').style.display='block';
 		document.getElementsByClassName('velFinal')[1].innerHTML=v.toFixed(1);
 		if (nave==1){
