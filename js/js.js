@@ -39,10 +39,10 @@ window.onload = function(){
 		
  
 		// indicamos el archivo de audio a cargar
-		//audioElement.setAttribute('src', '8-bit-Arcade4-nosfx.mp3');
+		audioElement.setAttribute('src', '8-bit-Arcade4-nosfx.mp3');
  
 		// Si deseamos que una vez cargado empieze a sonar...
-		//audioElement.setAttribute('autoplay', 'autoplay');
+		audioElement.setAttribute('autoplay', 'autoplay');
 		
 // creamos el objeto audio2
 		//var audioElement2 = document.createElement('audio');
@@ -106,7 +106,7 @@ window.onload = function(){
 			document.getElementById('musicOn').style.display='block';
 			document.getElementById('musicOff').style.display='none';
 			// Si deseamos que inicie siempre desde el principio
-			audioElement.currentTime = 0;
+			//audioElement.currentTime = 0;
  
 			// iniciamos el audio
 			if (aterrizado==false){
@@ -137,12 +137,6 @@ function musicOFF (){
 }
 
 function nivelFacil (){
-	// indicamos el archivo de audio a cargar
-		audioElement.setAttribute('src', '8-bit-Arcade4-nosfx.mp3');
- 
-		// Si deseamos que una vez cargado empieze a sonar...
-		audioElement.setAttribute('autoplay', 'autoplay');
-	
 	document.getElementById('dificultad').style.display='none';
 	
 	nContador = 2;
@@ -151,16 +145,15 @@ function nivelFacil (){
 }
 
 function nivelDificil (){
-	// indicamos el archivo de audio a cargar
-		audioElement.setAttribute('src', 'Fast Ace.wav');
- 
-		// Si deseamos que una vez cargado empieze a sonar...
-		audioElement.setAttribute('autoplay', 'autoplay');
+	/*audioElement.setAttribute('pause', 'pause');
+var audioElement = document.createElement('audio');	
+	audioElement.setAttribute('src', 'Fast Ace.wav');
+	audioElement.setAttribute('autoplay', 'autoplay');*/
 	
 	document.getElementById('dificultad').style.display='none';
 	v=15;
 	c=50;
-	combustible.style.width="60%";
+	combustible.style.width="50%";
 	nContador = 2;
 	document.getElementById('contador3').style.display='block';		
 	contador=setInterval(cuentaAtras,1000);
