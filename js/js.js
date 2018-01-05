@@ -157,10 +157,10 @@ function nivelFacil (){
 }
 
 function nivelDificil (){
-	/*audioElement.setAttribute('pause', 'pause');
-var audioElement = document.createElement('audio');	
-	audioElement.setAttribute('src', 'Fast Ace.wav');
-	audioElement.setAttribute('autoplay', 'autoplay');*/
+	
+	//La música cambia según el nivel de dificultad
+	audioElement.setAttribute('src', 'Fast Ace.wav'); 
+	audioElement.setAttribute('autoplay', 'autoplay');	
 	
 	document.getElementById('dificultad').style.display='none';
 	v=15;
