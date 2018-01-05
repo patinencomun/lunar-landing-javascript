@@ -28,6 +28,7 @@ var contador;
 
 
 var audioElement = document.createElement('audio');
+var audioElement2 = document.createElement('audio');
 
 //al cargar por completo la página...
 window.onload = function(){	
@@ -38,11 +39,10 @@ window.onload = function(){
 		
  
 		// indicamos el archivo de audio a cargar
-		audioElement.setAttribute('src', '8-bit-Arcade4-nosfx.mp3');
+		//audioElement.setAttribute('src', '8-bit-Arcade4-nosfx.mp3');
  
 		// Si deseamos que una vez cargado empieze a sonar...
-		audioElement.setAttribute('autoplay', 'autoplay');
-	audioElement.autoplay=true;
+		//audioElement.setAttribute('autoplay', 'autoplay');
 		
 // creamos el objeto audio2
 		//var audioElement2 = document.createElement('audio');
@@ -96,7 +96,8 @@ window.onload = function(){
 	//musica ON/OFF
 	document.getElementById("musicOn").addEventListener("click", function() {
 			// hacemos pausa
-			audioElement.pause();
+			if (aterrizado==false){
+			audioElement.pause();}
 			document.getElementById('musicOn').style.display='none';
 			document.getElementById('musicOff').style.display='block';
 		});
@@ -108,7 +109,8 @@ window.onload = function(){
 			audioElement.currentTime = 0;
  
 			// iniciamos el audio
-			audioElement.play();
+			if (aterrizado==false){
+			audioElement.play();}
 		});
 
 	//EMPEZAR EL JUEGO
@@ -135,6 +137,12 @@ function musicOFF (){
 }
 
 function nivelFacil (){
+	// indicamos el archivo de audio a cargar
+		audioElement.setAttribute('src', '8-bit-Arcade4-nosfx.mp3');
+ 
+		// Si deseamos que una vez cargado empieze a sonar...
+		audioElement.setAttribute('autoplay', 'autoplay');
+	
 	document.getElementById('dificultad').style.display='none';
 	
 	nContador = 2;
@@ -143,10 +151,11 @@ function nivelFacil (){
 }
 
 function nivelDificil (){
-	/*audioElement.setAttribute('pause', 'pause');
-var audioElement = document.createElement('audio');	
-	audioElement.setAttribute('src', 'Fast Ace.wav');
-	audioElement.setAttribute('autoplay', 'autoplay');*/
+	// indicamos el archivo de audio a cargar
+		audioElement.setAttribute('src', 'Fast Ace.wav');
+ 
+		// Si deseamos que una vez cargado empieze a sonar...
+		audioElement.setAttribute('autoplay', 'autoplay');
 	
 	document.getElementById('dificultad').style.display='none';
 	v=15;
