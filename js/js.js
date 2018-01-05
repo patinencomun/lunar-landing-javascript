@@ -26,19 +26,28 @@ var combustible = null;
 var nContador;
 var contador;
 
+
+var audioElement = document.createElement('audio');
+
 //al cargar por completo la página...
 window.onload = function(){	
 
 
 
 // creamos el objeto audio
-		var audioElement = document.createElement('audio');
+		
  
 		// indicamos el archivo de audio a cargar
 		audioElement.setAttribute('src', '8-bit-Arcade4-nosfx.mp3');
  
 		// Si deseamos que una vez cargado empieze a sonar...
 		audioElement.setAttribute('autoplay', 'autoplay');
+		
+// creamos el objeto audio2
+		//var audioElement2 = document.createElement('audio');
+ 
+		// indicamos el archivo de audio a cargar
+		//audioElement2.setAttribute('src', 'success.wav');
 	
 //************************************	
 	
@@ -82,6 +91,24 @@ window.onload = function(){
 		}
 	}	
 	document.onkeyup = motorOff;
+	
+	//musica ON/OFF
+	document.getElementById("musicOn").addEventListener("click", function() {
+			// hacemos pausa
+			audioElement.pause();
+			document.getElementById('musicOn').style.display='none';
+			document.getElementById('musicOff').style.display='block';
+		});
+	
+	document.getElementById("musicOff").addEventListener("click", function() {
+			document.getElementById('musicOn').style.display='block';
+			document.getElementById('musicOff').style.display='none';
+			// Si deseamos que inicie siempre desde el principio
+			audioElement.currentTime = 0;
+ 
+			// iniciamos el audio
+			audioElement.play();
+		});
 
 	//EMPEZAR EL JUEGO
 	document.getElementById('facil').onclick = function (){
@@ -95,10 +122,20 @@ window.onload = function(){
 }
 
 //Definición de funciones
+/*function apagarMusica (){
+	audioElement.setAttribute('pause', 'pause');
+}*/
+function musicON (){
+	
+}
+
+function musicOFF (){
+	
+}
 
 function nivelFacil (){
 	document.getElementById('dificultad').style.display='none';
-	juegoEmpezado = true;
+	
 	nContador = 2;
 	document.getElementById('contador3').style.display='block';		
 	contador=setInterval(cuentaAtras,1000);
@@ -112,9 +149,8 @@ var audioElement = document.createElement('audio');
 	
 	document.getElementById('dificultad').style.display='none';
 	v=15;
-	c=60;
+	c=50;
 	combustible.style.width="60%";
-	juegoEmpezado = true;
 	nContador = 2;
 	document.getElementById('contador3').style.display='block';		
 	contador=setInterval(cuentaAtras,1000);
@@ -126,6 +162,7 @@ function cuentaAtras() {
 	}else{
 		clearInterval(contador);
 		document.getElementById('contador3').style.display='none';
+		juegoEmpezado = true;
 		start();
 	}
 	nContador--;	
@@ -288,6 +325,12 @@ function actualizarFuel(){
 
 function finalJuego(){
 	if (v>4){
+		audioElement.pause();
+		//audioElement.setAttribute('pause','pause');
+		var audioElement2 = document.createElement('audio');
+		audioElement2.setAttribute('src', 'fail.wav');
+		audioElement2.setAttribute('autoplay', 'autoplay');
+		
 		document.getElementById('final2').style.display='block';
 		document.getElementsByClassName('velFinal')[1].innerHTML=v.toFixed(1);
 		if (nave==1){
@@ -299,5 +342,10 @@ function finalJuego(){
 		document.getElementById('final1').style.display='block';
 		document.getElementsByClassName('velFinal')[0].innerHTML=v.toFixed(1);
 		document.getElementById('n').src = 'img/astronauta.png';
+		
+		audioElement.pause();
+		var audioElement2 = document.createElement('audio');
+		audioElement2.setAttribute('src', 'success.wav');
+		audioElement2.setAttribute('autoplay', 'autoplay');
 	}
 }

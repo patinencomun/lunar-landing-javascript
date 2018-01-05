@@ -68,6 +68,41 @@ body{background:url(../img/cielo.jpeg) no-repeat fixed center;}
 	}
 	
 #nave img{height:100%;}
+
+#musicOn {
+	z-index:4;
+	position:fixed;
+	bottom:13%;
+	left:3%;
+	height:7%;
+	display:block;
+}
+#musicOn img{
+	height:100%;
+}
+
+#musicOff {
+	z-index:4;
+	position:fixed;
+	bottom:13%;
+	left:3%;
+	height:7%;
+	display:none;
+}
+#musicOff img{
+	height:100%;
+}
+
+#about {
+	z-index:4;
+	position:fixed;
+	bottom:4%;
+	left:3%;
+	height:7%;
+}
+#about img{
+	height:100%;
+}
 	
 .c{	
 	z-index:3;
