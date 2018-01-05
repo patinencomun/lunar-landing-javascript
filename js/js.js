@@ -33,7 +33,7 @@ var audioElement2 = document.createElement('audio');
 //al cargar por completo la página...
 window.onload = function(){	
 
-
+//if (screen.width>800){document.getElementById('nave').style.display='none';} 
 
 // creamos el objeto audio
 		
@@ -96,8 +96,14 @@ window.onload = function(){
 	//musica ON/OFF
 	document.getElementById("musicOn").addEventListener("click", function() {
 			// hacemos pausa
-			if (aterrizado==false){
-			audioElement.pause();}
+			if (screen.width>770){
+				if (aterrizado==false){
+					audioElement.pause();
+				}
+			}else{
+				audioElement.pause();
+			}
+			
 			document.getElementById('musicOn').style.display='none';
 			document.getElementById('musicOff').style.display='block';
 		});
@@ -109,8 +115,14 @@ window.onload = function(){
 			//audioElement.currentTime = 0;
  
 			// iniciamos el audio
-			if (aterrizado==false){
-			audioElement.play();}
+			if (screen.width>770){
+				if (aterrizado==false){
+					audioElement.play();
+				}
+			}else{
+				audioElement.play();
+			}
+			
 		});
 
 	//EMPEZAR EL JUEGO
@@ -328,12 +340,14 @@ function actualizarFuel(){
 
 function finalJuego(){
 	if (v>4){
-		audioElement.pause();
+		
 		//audioElement.setAttribute('pause','pause');
 		var audioElement2 = document.createElement('audio');
 		audioElement2.setAttribute('src', 'fail.wav');
-		audioElement2.setAttribute('autoplay', 'autoplay');
-		
+		if (screen.width>770){
+			audioElement.pause();
+			audioElement2.setAttribute('autoplay', 'autoplay');
+		}
 		document.getElementById('final2').style.display='block';
 		document.getElementsByClassName('velFinal')[1].innerHTML=v.toFixed(1);
 		if (nave==1){
@@ -346,9 +360,12 @@ function finalJuego(){
 		document.getElementsByClassName('velFinal')[0].innerHTML=v.toFixed(1);
 		document.getElementById('n').src = 'img/astronauta.png';
 		
-		audioElement.pause();
+		
 		var audioElement2 = document.createElement('audio');
 		audioElement2.setAttribute('src', 'success.wav');
-		audioElement2.setAttribute('autoplay', 'autoplay');
+		if (screen.width>770){
+			audioElement.pause();
+			audioElement2.setAttribute('autoplay', 'autoplay');
+		}
 	}
 }
