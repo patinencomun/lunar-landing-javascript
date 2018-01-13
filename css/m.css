@@ -138,7 +138,7 @@ body{background:url(../img/cielo.jpeg) no-repeat fixed;}
 	z-index:6;
 	text-align:center;
 	position:fixed;
-	top:37%;
+	top:35%;
 	left:12%;
 	width:73%;
 	height:22%;
@@ -301,18 +301,47 @@ body{background:url(../img/cielo.jpeg) no-repeat fixed;}
 	background-color: #0043E1;
 }
 
-#cpanel{}
+.ad {
+	z-index:8;
+	position:fixed;
+	left:36%;
+	width:30%;
+	padding:1%;
+	background-color:red;
+	border-style: solid;
+	border-width: 6px;
+    border-color: grey;
+	text-align:center;
+	font-family: 'Arial';
+	font-size:3vw;
+}
 
+#adINSTRUCCIONES {
+	display:none;
+}
 
+#adABOUT {
+	display:none;
+}
 
-/*#hidem,#showm{display:none}*/
+.si {
+	display:inline-block;
+	width:59%;
+	padding:5%;
+}
 
+.si img {
+	width:90%;
+	max-width:90%;
+}
 
-/*<div class="a">
-    <div id="showm">show menu</div>
-    <ul id="cpanel">
-	  <li>Fuel <span id="fuel">100</span> l</li>
-	  <li>Altura <span id="altura">70</span> m</li>
-      <li>Velocidad <span id="velocidad">100</span> m/s</li>  
-    </ul>
-  </div>*/
+.no {
+	display:inline-block;
+	width:59%;
+	padding:2%;
+}
+
+.no img {
+	width:90%;
+	max-width:90%;
+}

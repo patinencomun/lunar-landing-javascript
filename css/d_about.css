@@ -39,6 +39,7 @@ ul {
 }
 
 .enlace:hover{
+	color:white;
 	background-color: #0043E1;
 }
 

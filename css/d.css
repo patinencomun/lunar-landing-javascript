@@ -143,9 +143,9 @@ body{background:url(../img/cielo.jpeg) no-repeat fixed center;}
 	z-index:6;
 	text-align:center;
 	position:fixed;
-	top:37%;
+	top:30%;
 	left:28%;
-	width:44%;
+	width:46%;
 	height:34%;
 	background-color:yellow;
 	outline-style: solid;
@@ -255,28 +255,6 @@ body{background:url(../img/cielo.jpeg) no-repeat fixed center;}
 	color:white;
 }
 
-/*.botonMenu {
-	text-align:center;
-	position:absolute;
-	display:block;
-	padding:2%;
-	height:20%
-}
-
-#m2a{
-	top:0%;
-}
-#m2b{
-	top:25%;
-}
-#m2c{
-	top:50%;
-}
-#m2d{
-	top:75%;
-}*/
-
-
 .luna{
 	z-index:1;
 	text-align:center;	
@@ -321,18 +299,46 @@ body{background:url(../img/cielo.jpeg) no-repeat fixed center;}
 	background-color: #0043E1;
 }
 
-#cpanel{}
+.ad {
+	z-index:8;
+	position:fixed;
+	left:35%;
+	width:30%;
+	background-color:red;
+	border-style: solid;
+	border-width: 12px;
+    border-color: grey;
+	text-align:center;
+	font-family: 'Arial';
+	font-size:1.5vw;
+}
 
-/*#hidem,#showm{float:right}
+#adINSTRUCCIONES {
+	display:none;
+}
 
-#hidem,#showm{display:none}*/
+#adABOUT {
+	display:none;
+}
 
+.si {
+	display:inline-block;
+	width:30%;
+}
 
-/*<div class="a">
-    <div id="showm">show menu</div>
-    <ul id="cpanel">
-	  <li>Fuel <span id="fuel">100</span> l</li>
-	  <li>Altura <span id="altura">70</span> m</li>
-      <li>Velocidad <span id="velocidad">100</span> m/s</li>  
-    </ul>
-  </div>*/
+.si img {
+	width:90%;
+	max-width:90%;
+	padding:2%;
+}
+
+.no {
+	display:inline-block;
+	width:30%;
+}
+
+.no img {
+	width:90%;
+	max-width:90%;
+	padding:2%;
+}
