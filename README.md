@@ -1,4 +1,11 @@
-# Lunar lander con html, css y javascript
+﻿# Lunar lander con html, css y javascript
+
+## Versión 0.7
+
+Previsualización: https://rawgit.com/MariaAdrover/lunar-landing-javascript/v0.7/index.html
+* Añadidos html y css de la página de INSTRUCCIONES y ABOUT
+* Modificación del menú inicial de selección de dificultad. Creo que queda mejor indicar sólo el objetivo y cual es el botón de menú, porque si no, la página de instrucciones no tiene sentido.
+* El menú se puede desplegar en cualquier momento para que las instrucciones siempre estén disponibles. 
  
  ## Versión 0.6
 

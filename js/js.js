@@ -7,6 +7,9 @@ var timerFuel=null;
 var pause = false;
 var juegoEmpezado = false;
 
+var audioElement; //música
+var musicOn=true;
+
 //NAVE
 var y = 5; // altura inicial y0=10%, debe leerse al iniciar si queremos que tenga alturas diferentes dependiendo del dispositivo
 var v = 0;
@@ -23,35 +26,20 @@ var velocidad = null;
 var altura = null;
 var combustible = null;
 
+//CUENTA ATRÁS
 var nContador;
 var contador;
 
 
-var audioElement = document.createElement('audio');
-var audioElement2 = document.createElement('audio');
-
-//al cargar por completo la página...
 window.onload = function(){	
 
-//if (screen.width>800){document.getElementById('nave').style.display='none';} 
-
-// creamos el objeto audio
+	// indicamos el archivo de audio a cargar
+	audioElement = document.createElement('audio');
+	audioElement.setAttribute('src', '8-bit-Arcade4.mp3'); 
+	// La música empieza a sonar al cargar la página y se repite automáticamente al terminar la pista
+	audioElement.setAttribute('autoplay', 'autoplay');
+	audioElement.setAttribute('loop', 'loop');
 		
- 
-		// indicamos el archivo de audio a cargar
-		audioElement.setAttribute('src', '8-bit-Arcade4-nosfx.mp3');
- 
-		// Si deseamos que una vez cargado empieze a sonar...
-		audioElement.setAttribute('autoplay', 'autoplay');
-		
-// creamos el objeto audio2
-		//var audioElement2 = document.createElement('audio');
- 
-		// indicamos el archivo de audio a cargar
-		//audioElement2.setAttribute('src', 'success.wav');
-	
-//************************************	
-	
 	velocidad = document.getElementById("velocidad");
 	altura = document.getElementById("altura");
 	combustible = document.getElementById("fuel");
@@ -67,9 +55,14 @@ window.onload = function(){
 		}
 	}
 	
+	
 	//botón VOLVER AL JUEGO del menú
 	document.getElementById("hidem").onclick = function (){
-		reanudarJuego();
+		if (juegoEmpezado && aterrizado == false){
+			reanudarJuego();
+		}else{
+			document.getElementsByClassName('menu')[0].style.display = 'none';
+		}
 	}
 	
 	//botón CAMBIAR DE NAVE
@@ -78,7 +71,22 @@ window.onload = function(){
 		if (aterrizado == false){
 			cambiarNave();
 		}
-	}	
+	}
+
+
+	//CONFIRM
+	document.getElementsByClassName('aviso')[0].onclick = function(){
+		if (confirm("Si pulsas aceptar saldrás del juego e irás a la página de INSTRUCCIONES. ¿Quieres continuar?")==true){
+			location.href='file:///C:/Users/miaad/Desktop/Llenguatge%20de%20marques/LM_PRACTICA4/v0.7/instrucciones.html';
+		}
+	}
+	
+	document.getElementsByClassName('aviso')[1].onclick = function(){
+		if (confirm("Si pulsas aceptar saldrás del juego e irás a la página de ABOUT. ¿Quieres continuar?")==true){
+			location.href='file:///C:/Users/miaad/Desktop/Llenguatge%20de%20marques/LM_PRACTICA4/v0.7/about.html';
+		}
+	}
+		
 	
 	//MOTOR
 	//botón POWER (encender/apagar el motor)
@@ -95,20 +103,24 @@ window.onload = function(){
 	
 	//musica ON/OFF
 	document.getElementById("musicOn").addEventListener("click", function() {
+			if (musicOn){
 			// hacemos pausa
 			if (screen.width>770){
 				if (aterrizado==false){
 					audioElement.pause();
-				}
+					musicOn = false;
+				}else{audioElement.pause();musicOn = false;}
 			}else{
 				audioElement.pause();
+				musicOn = false;
 			}
 			
 			document.getElementById('musicOn').style.display='none';
 			document.getElementById('musicOff').style.display='block';
-		});
+			}});
 	
 	document.getElementById("musicOff").addEventListener("click", function() {
+			if (musicOn==false){
 			document.getElementById('musicOn').style.display='block';
 			document.getElementById('musicOff').style.display='none';
 			// Si deseamos que inicie siempre desde el principio
@@ -118,12 +130,14 @@ window.onload = function(){
 			if (screen.width>770){
 				if (aterrizado==false){
 					audioElement.play();
-				}
+					musicOn = true;
+				}else{audioElement.play();musicOn = true;}
 			}else{
 				audioElement.play();
+				musicOn = true;
 			}
 			
-		});
+	}});
 
 	//EMPEZAR EL JUEGO
 	document.getElementById('facil').onclick = function (){
@@ -160,10 +174,11 @@ function nivelDificil (){
 	
 	//La música cambia según el nivel de dificultad
 	audioElement.setAttribute('src', 'Fast Ace.wav'); 
-	audioElement.setAttribute('autoplay', 'autoplay');	
+	if(musicOn==false){audioElement.pause();}
 	
 	document.getElementById('dificultad').style.display='none';
 	v=15;
+	dt=(dt*2);
 	c=50;
 	combustible.style.width="50%";
 	nContador = 2;
@@ -339,15 +354,13 @@ function actualizarFuel(){
 }
 
 function finalJuego(){
-	if (v>4){
-		
-		//audioElement.setAttribute('pause','pause');
-		var audioElement2 = document.createElement('audio');
-		audioElement2.setAttribute('src', 'fail.wav');
+	if (v>4){  //Has perdido
+		//Sonido
 		if (screen.width>770){
-			audioElement.pause();
-			audioElement2.setAttribute('autoplay', 'autoplay');
+			audioElement.setAttribute('src', 'fail.wav');
+			if(musicOn==false){audioElement.pause();}
 		}
+		//Imagen
 		document.getElementById('final2').style.display='block';
 		document.getElementsByClassName('velFinal')[1].innerHTML=v.toFixed(1);
 		if (nave==1){
@@ -355,17 +368,13 @@ function finalJuego(){
 		}else{
 			document.getElementById("n").src = "img/astronauta2.png"
 		}
-	}else{
+	}else{  //Has ganado	
+		if (screen.width>770){
+			audioElement.setAttribute('src', 'success.wav');
+			if(musicOn==false){audioElement.pause();}
+		}
 		document.getElementById('final1').style.display='block';
 		document.getElementsByClassName('velFinal')[0].innerHTML=v.toFixed(1);
 		document.getElementById('n').src = 'img/astronauta.png';
-		
-		
-		var audioElement2 = document.createElement('audio');
-		audioElement2.setAttribute('src', 'success.wav');
-		if (screen.width>770){
-			audioElement.pause();
-			audioElement2.setAttribute('autoplay', 'autoplay');
-		}
 	}
 }

@@ -140,7 +140,7 @@ body{background:url(../img/cielo.jpeg) no-repeat fixed center;}
 }
 
 .menu{
-	z-index:5;
+	z-index:6;
 	text-align:center;
 	position:fixed;
 	top:37%;
@@ -239,9 +239,9 @@ body{background:url(../img/cielo.jpeg) no-repeat fixed center;}
 }
 
 .botonDificultad img {
-	height:76%;
+	height:70%;
 	width:100%;
-	max-height:100%;
+	max-height:80%;
 	padding:4%;
 }
 

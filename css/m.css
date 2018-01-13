@@ -135,7 +135,7 @@ body{background:url(../img/cielo.jpeg) no-repeat fixed;}
 }
 
 .menu {
-	z-index:5;
+	z-index:6;
 	text-align:center;
 	position:fixed;
 	top:37%;
