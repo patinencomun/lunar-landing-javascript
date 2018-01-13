@@ -449,7 +449,7 @@ function actualizarFuel(){
 }
 
 function finalJuego(){
-	if (v>4){  //Has perdido
+	if (v>2){  //Has perdido
 		//Sonido
 		if (screen.width>770){
 			audioElement.setAttribute('src', 'fail.wav');
