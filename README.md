@@ -5,7 +5,31 @@
 Previsualización: https://rawgit.com/MariaAdrover/lunar-landing-javascript/v0.7/index.html
 * Añadidos html y css de la página de INSTRUCCIONES y ABOUT
 * Modificación del menú inicial de selección de dificultad. Creo que queda mejor indicar sólo el objetivo y cual es el botón de menú, porque si no, la página de instrucciones no tiene sentido.
-* El menú se puede desplegar en cualquier momento para que las instrucciones siempre estén disponibles. 
+* El menú se puede desplegar en cualquier momento para que las instrucciones siempre estén disponibles.
+* Al pulsar el botón de ABOUT o de instrucciones sale un mensaje para confirmar que hay que salir de la página.
+He hecho un mensaje advert con la ventana en el estilo del juego. Para utilizar un advert normal el código sería el siguiente:
+```
+document.getElementsByClassName('aviso')[0].onclick = function(){
+
+	if (confirm("Si pulsas aceptar saldrás del juego e irás a la página de INSTRUCCIONES. ¿Quieres continuar?")==true){
+
+		location.href='file:///C:/Users/miaad/Desktop/Llenguatge%20de%20marques/LM_PRACTICA4/v0.7/instrucciones.html';
+
+	}
+	
+}
+	
+	
+document.getElementsByClassName('aviso')[1].onclick = function(){
+		
+	if (confirm("Si pulsas aceptar saldrás del juego e irás a la página de ABOUT. ¿Quieres continuar?")==true){
+
+		location.href='file:///C:/Users/miaad/Desktop/Llenguatge%20de%20marques/LM_PRACTICA4/v0.7/about.html';
+
+	}
+
+}
+``` 
  
  ## Versión 0.6
 
