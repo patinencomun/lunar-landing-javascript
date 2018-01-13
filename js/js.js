@@ -6,6 +6,8 @@ var timerFuel=null;
 
 var pause = false;
 var juegoEmpezado = false;
+var advert = false;
+var menu = false;
 
 var audioElement; //música
 var musicOn=true;
@@ -29,6 +31,7 @@ var combustible = null;
 //CUENTA ATRÁS
 var nContador;
 var contador;
+var contadorOn=false;
 
 
 window.onload = function(){	
@@ -46,11 +49,31 @@ window.onload = function(){
 		
 	//botón MENU
 	document.getElementById("showm").onclick = function (){
-		if (juegoEmpezado && aterrizado == false){
-			if (pause){
-				reanudarJuego();
+		if(advert == false){
+			if (juegoEmpezado && aterrizado == false){
+				if (menu){
+					document.getElementsByClassName("menu")[0].style.display = "none";
+					menu=false;
+					reanudarJuego();
+				}else{				
+					document.getElementsByClassName("menu")[0].style.display = "block";
+					menu=true;
+					pausarJuego();
+				}
 			}else{
-				pausarJuego();
+				if (menu){
+					document.getElementsByClassName("menu")[0].style.display = "none";
+					menu=false;
+					if(contadorOn){
+						contador=setInterval(cuentaAtras,1000);
+					}
+				}else{				
+					document.getElementsByClassName("menu")[0].style.display = "block";
+					menu=true;
+					if(contadorOn){
+						clearInterval(contador);
+					}
+				}
 			}
 		}
 	}
@@ -58,10 +81,18 @@ window.onload = function(){
 	
 	//botón VOLVER AL JUEGO del menú
 	document.getElementById("hidem").onclick = function (){
-		if (juegoEmpezado && aterrizado == false){
-			reanudarJuego();
-		}else{
-			document.getElementsByClassName('menu')[0].style.display = 'none';
+		if(advert == false){
+			if (juegoEmpezado && aterrizado == false){			
+				document.getElementsByClassName("menu")[0].style.display = "none";
+				menu=false;
+				reanudarJuego();
+			}else{
+				document.getElementsByClassName('menu')[0].style.display = 'none';
+				menu=false;
+				if(contadorOn){
+					contador=setInterval(cuentaAtras,1000);
+				}
+			}
 		}
 	}
 	
@@ -74,16 +105,60 @@ window.onload = function(){
 	}
 
 
-	//CONFIRM
+	//CONFIRM	
 	document.getElementsByClassName('aviso')[0].onclick = function(){
-		if (confirm("Si pulsas aceptar saldrás del juego e irás a la página de INSTRUCCIONES. ¿Quieres continuar?")==true){
-			location.href='https://rawgit.com/MariaAdrover/lunar-landing-javascript/v0.7/instrucciones.html';
+		if(advert == false){
+			document.getElementById('adINSTRUCCIONES').style.display='block';
+			if(contadorOn){
+				clearInterval(contador);
+			}		
+			if(juegoEmpezado && aterrizado == false){
+				pausarJuego();
+			}
+			advert = true;
 		}
 	}
 	
 	document.getElementsByClassName('aviso')[1].onclick = function(){
-		if (confirm("Si pulsas aceptar saldrás del juego e irás a la página de ABOUT. ¿Quieres continuar?")==true){
-			location.href='https://rawgit.com/MariaAdrover/lunar-landing-javascript/v0.7/about.html';
+		if(advert == false){
+			document.getElementById('adABOUT').style.display='block';
+			if(contadorOn){
+				clearInterval(contador);
+			}
+			if(juegoEmpezado && aterrizado == false){
+				pausarJuego();
+			}
+		advert = true;
+		}
+	}
+	
+	document.getElementById('siINS').onclick = function(){
+		location.href='file:///C:/Users/miaad/Desktop/Llenguatge%20de%20marques/LM_PRACTICA4/v0.7/instrucciones.html';
+	}
+	
+	document.getElementById('siAB').onclick = function(){
+		location.href='file:///C:/Users/miaad/Desktop/Llenguatge%20de%20marques/LM_PRACTICA4/v0.7/instrucciones.html';
+	}
+	
+	document.getElementById('noINS').onclick = function(){
+		document.getElementById('adINSTRUCCIONES').style.display='none';		
+		advert = false;
+		if(menu==false && juegoEmpezado && aterrizado == false){
+			reanudarJuego();
+		}
+		if(menu==false && contadorOn){
+			contador=setInterval(cuentaAtras,1000);
+		}
+	}
+	
+	document.getElementById('noAB').onclick = function(){
+		document.getElementById('adABOUT').style.display='none';		
+		advert = false;
+		if(menu==false && juegoEmpezado && aterrizado == false){
+			reanudarJuego();
+		}
+		if(menu==false && contadorOn){
+			contador=setInterval(cuentaAtras,1000);
 		}
 	}
 		
@@ -91,15 +166,21 @@ window.onload = function(){
 	//MOTOR
 	//botón POWER (encender/apagar el motor)
 	document.getElementById('power').onclick = function () {
-		botonPower ();
+		if (advert == false){
+			botonPower ();
+		}
 	}	
 	//teclado
 	document.onkeydown = function (e){ //tecla ESPACIO 
 		if (e.keyCode==32){
-			teclaEspacioPulsada ();
+			if(advert == false){
+				teclaEspacioPulsada ();
+			}
 		}
 	}	
-	document.onkeyup = motorOff;
+	document.onkeyup = function(){
+			motorOff();
+	}
 	
 	//musica ON/OFF
 	document.getElementById("musicOn").addEventListener("click", function() {
@@ -141,11 +222,15 @@ window.onload = function(){
 
 	//EMPEZAR EL JUEGO
 	document.getElementById('facil').onclick = function (){
-		nivelFacil();
+		if(advert == false){
+			nivelFacil();
+		}
 	}
 	
 	document.getElementById('dificil').onclick = function (){
-		nivelDificil();
+		if(advert == false){
+			nivelDificil();
+		}
 	}
 	
 }
@@ -162,10 +247,19 @@ function musicOFF (){
 	
 }
 
+function advertINSTRUCCIONES(){
+	
+}
+
+function advertABOUT(){
+	
+}
+
 function nivelFacil (){
 	document.getElementById('dificultad').style.display='none';
 	
 	nContador = 2;
+	contadorOn=true;
 	document.getElementById('contador3').style.display='block';		
 	contador=setInterval(cuentaAtras,1000);
 }
@@ -182,6 +276,7 @@ function nivelDificil (){
 	c=50;
 	combustible.style.width="50%";
 	nContador = 2;
+	contadorOn=true;
 	document.getElementById('contador3').style.display='block';		
 	contador=setInterval(cuentaAtras,1000);
 }
@@ -192,7 +287,8 @@ function cuentaAtras() {
 	}else{
 		clearInterval(contador);
 		document.getElementById('contador3').style.display='none';
-		juegoEmpezado = true;
+		contadorOn=false;
+		juegoEmpezado = true;		
 		start();
 	}
 	nContador--;	
@@ -210,15 +306,14 @@ function botonPower (){
 }
 
 function pausarJuego(){
-	document.getElementsByClassName("menu")[0].style.display = "block";
 	stop();
 	pause = true;
+	clearInterval(timer);
 }
 
 function reanudarJuego(){
 	pause = false;
-	document.getElementsByClassName("menu")[0].style.display = "none";
-	start();
+	timer=setInterval(function(){ moverNave(); }, dt*1000);
 }
 
 function teclaEspacioPulsada (){
