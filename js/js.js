@@ -143,11 +143,11 @@ window.onload = function(){
 	
 	//botones SI/NO del mensaje CONFIRM
 	document.getElementById('siINS').onclick = function(){
-		location.href='file:///C:/Users/miaad/Desktop/Llenguatge%20de%20marques/LM_PRACTICA4/v0.7/instrucciones.html';
+		location.href='https://rawgit.com/MariaAdrover/lunar-landing-javascript/v0.7/instrucciones.html';
 	}
 	
 	document.getElementById('siAB').onclick = function(){
-		location.href='file:///C:/Users/miaad/Desktop/Llenguatge%20de%20marques/LM_PRACTICA4/v0.7/about.html';
+		location.href='https://rawgit.com/MariaAdrover/lunar-landing-javascript/v0.7/about.html';
 	}
 	
 	document.getElementById('noINS').onclick = function(){
@@ -175,17 +175,17 @@ window.onload = function(){
 	//REINICIAR
 	document.getElementsByClassName('reiniciar')[0].onclick = function(){
 		if(advert==false){
-			location.href='file:///C:/Users/miaad/Desktop/Llenguatge%20de%20marques/LM_PRACTICA4/v0.7/index.html';
+			location.href='https://rawgit.com/MariaAdrover/lunar-landing-javascript/v0.7/index.html';
 		}
 	}
 	document.getElementsByClassName('reiniciar')[1].onclick = function(){
 		if(advert==false){
-			location.href='file:///C:/Users/miaad/Desktop/Llenguatge%20de%20marques/LM_PRACTICA4/v0.7/index.html';
+			location.href='https://rawgit.com/MariaAdrover/lunar-landing-javascript/v0.7/index.html';
 		}
 	}
 	document.getElementsByClassName('reiniciar')[2].onclick = function(){
 		if(advert==false){
-			location.href='file:///C:/Users/miaad/Desktop/Llenguatge%20de%20marques/LM_PRACTICA4/v0.7/index.html';
+			location.href='https://rawgit.com/MariaAdrover/lunar-landing-javascript/v0.7/index.html';
 		}
 	}
 	
