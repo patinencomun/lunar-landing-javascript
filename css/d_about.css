@@ -1,0 +1,89 @@
+body,html{height:100%;padding:0px;margin:0px;}
+body{background:url(../img/cielo.jpeg) no-repeat fixed center;}
+
+#marco{
+	text-align:center;
+	position:fixed;
+	top:18%;
+	left:22%;
+	width:56%;
+	height:52%;
+	padding-top:3%;
+	background-color:yellow;
+	outline-style: solid;
+	outline-width: 12px;
+    outline-color: grey;
+	font-family: 'Arial';
+	font-size:2vw;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+	margin-bottom:6%;
+    padding: 0;
+}
+
+a {	
+	text-decoration:none;
+} 
+
+a:hover {	
+	color:white;
+}
+
+.boton img{
+	max-width:90%;
+	padding:1%;
+}
+
+.enlace {
+	padding:2px;
+	text-decoration:none;
+}
+
+.enlace:hover{
+	background-color: #0043E1;
+}
+
+#musicOn {
+	z-index:4;
+	position:fixed;
+	bottom:5%;
+	left:3%;
+	height:7%;
+	display:block;
+}
+
+#musicOn img{
+	height:100%;
+}
+
+#musicOff {
+	z-index:4;
+	position:fixed;
+	bottom:5%;
+	left:3%;
+	height:7%;
+	display:none;
+}
+#musicOff img{
+	height:100%;
+}
+
+#musicOn:hover{
+	background-color: #0043E1;
+}
+#musicOff:hover{
+	background-color: #0043E1;
+}
+
+#cr {
+	font-size:1.2vw;
+}
+
+#cssOk {
+	position:fixed;
+	bottom:3%;
+	right:5%;
+}
