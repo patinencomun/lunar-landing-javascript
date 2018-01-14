@@ -1,7 +1,7 @@
 var audioElement = document.createElement('audio');
 
 window.onload = function(){
-	audioElement.setAttribute('src', '8-bit-Arcade4.mp3');
+	audioElement.setAttribute('src', 'sound/8-bit-Arcade4.mp3');
 	audioElement.setAttribute('autoplay', 'autoplay');
 	audioElement.setAttribute('loop', 'loop');
 	
