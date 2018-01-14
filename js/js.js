@@ -36,10 +36,6 @@ var contadorOn=false;
 
 window.onload = function(){
 	
-	if (screen.width<=770){
-		touch-action: none;
-	}
-
 	// indicamos el archivo de audio a cargar
 	audioElement = document.createElement('audio');
 	audioElement.setAttribute('src', 'sound/8-bit-Arcade4.mp3'); 
