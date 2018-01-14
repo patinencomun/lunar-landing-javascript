@@ -36,7 +36,7 @@ var contadorOn=false;
 
 window.onload = function(){
 	
-	if (screen.width>770){
+	if (screen.width<=770){
 		touch-action: none;
 	}
 
