@@ -34,7 +34,11 @@ var contador;
 var contadorOn=false;
 
 
-window.onload = function(){	
+window.onload = function(){
+	
+	if (screen.width>770){
+		touch-action: none;
+	}
 
 	// indicamos el archivo de audio a cargar
 	audioElement = document.createElement('audio');
