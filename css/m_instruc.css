@@ -76,6 +76,13 @@ body{background:url(../img/cielo.jpeg) no-repeat fixed;}
 	height:100%;
 }
 
+#musicOn:hover{
+	background-color: #0043E1;
+}
+#musicOff:hover{
+	background-color: #0043E1;
+}
+
 #about {
 	z-index:4;
 	position:fixed;
