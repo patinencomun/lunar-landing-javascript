@@ -38,7 +38,7 @@ window.onload = function(){
 
 	// indicamos el archivo de audio a cargar
 	audioElement = document.createElement('audio');
-	audioElement.setAttribute('src', '8-bit-Arcade4.mp3'); 
+	audioElement.setAttribute('src', 'sound/8-bit-Arcade4.mp3'); 
 	// La música empieza a sonar al cargar la página y se repite automáticamente al terminar la pista
 	audioElement.setAttribute('autoplay', 'autoplay');
 	audioElement.setAttribute('loop', 'loop');
@@ -64,12 +64,18 @@ window.onload = function(){
 				if (menu){
 					document.getElementsByClassName("menu")[0].style.display = "none";
 					menu=false;
+					if (juegoEmpezado==false){
+						document.getElementById('dificultad').style.display='block';
+					}
 					if(contadorOn){
 						contador=setInterval(cuentaAtras,1000);
 					}
 				}else{				
 					document.getElementsByClassName("menu")[0].style.display = "block";
 					menu=true;
+					if (juegoEmpezado==false){
+						document.getElementById('dificultad').style.display='none';
+					}
 					if(contadorOn){
 						clearInterval(contador);
 					}
@@ -89,6 +95,9 @@ window.onload = function(){
 			}else{
 				document.getElementsByClassName('menu')[0].style.display = 'none';
 				menu=false;
+				if (juegoEmpezado==false && contadorOn==false){
+					document.getElementById('dificultad').style.display='block';
+				}
 				if(contadorOn){
 					contador=setInterval(cuentaAtras,1000);
 				}
@@ -133,11 +142,11 @@ window.onload = function(){
 	}
 	
 	document.getElementById('siINS').onclick = function(){
-		location.href='https://rawgit.com/MariaAdrover/lunar-landing-javascript/v0.7/instrucciones.html';
+		location.href='file:///C:/Users/miaad/Desktop/Llenguatge%20de%20marques/LM_PRACTICA4/v0.7/instrucciones.html';
 	}
 	
 	document.getElementById('siAB').onclick = function(){
-		location.href='https://rawgit.com/MariaAdrover/lunar-landing-javascript/v0.7/about.html';
+		location.href='file:///C:/Users/miaad/Desktop/Llenguatge%20de%20marques/LM_PRACTICA4/v0.7/instrucciones.html';
 	}
 	
 	document.getElementById('noINS').onclick = function(){
@@ -161,7 +170,26 @@ window.onload = function(){
 			contador=setInterval(cuentaAtras,1000);
 		}
 	}
-		
+	
+	//REINICIAR
+	document.getElementsByClassName('reiniciar')[0].onclick = function(){
+		if(advert==false){
+			location.href='file:///C:/Users/miaad/Desktop/Llenguatge%20de%20marques/LM_PRACTICA4/v0.7/index.html';
+		}
+	}
+	document.getElementsByClassName('reiniciar')[1].onclick = function(){
+		if(advert==false){
+			location.href='file:///C:/Users/miaad/Desktop/Llenguatge%20de%20marques/LM_PRACTICA4/v0.7/index.html';
+		}
+	}
+	document.getElementsByClassName('reiniciar')[2].onclick = function(){
+		if(advert==false){
+			location.href='file:///C:/Users/miaad/Desktop/Llenguatge%20de%20marques/LM_PRACTICA4/v0.7/index.html';
+		}
+	}
+	
+	//INSTRUCCIONES
+	
 	
 	//MOTOR
 	//botón POWER (encender/apagar el motor)
@@ -267,7 +295,7 @@ function nivelFacil (){
 function nivelDificil (){
 	
 	//La música cambia según el nivel de dificultad
-	audioElement.setAttribute('src', 'Fast Ace.wav'); 
+	audioElement.setAttribute('src', 'sound/Fast Ace.wav'); 
 	if(musicOn==false){audioElement.pause();}
 	
 	document.getElementById('dificultad').style.display='none';
@@ -449,23 +477,23 @@ function actualizarFuel(){
 }
 
 function finalJuego(){
-	if (v>2){  //Has perdido
+	if (v>3){  //Has perdido
 		//Sonido
 		if (screen.width>770){
-			audioElement.setAttribute('src', 'fail.wav');
+			audioElement.setAttribute('src', 'sound/fail.wav');
 			if(musicOn==false){audioElement.pause();}
 		}
 		//Imagen
 		document.getElementById('final2').style.display='block';
 		document.getElementsByClassName('velFinal')[1].innerHTML=v.toFixed(1);
 		if (nave==1){
-			document.getElementById("n").src = "img/astronauta3.png"
+			document.getElementById("n").src = "img/astronauta3.png";
 		}else{
-			document.getElementById("n").src = "img/astronauta2.png"
+			document.getElementById("n").src = "img/astronauta2.png";
 		}
 	}else{  //Has ganado	
 		if (screen.width>770){
-			audioElement.setAttribute('src', 'success.wav');
+			audioElement.setAttribute('src', 'sound/success.wav');
 			if(musicOn==false){audioElement.pause();}
 		}
 		document.getElementById('final1').style.display='block';
