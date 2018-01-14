@@ -81,3 +81,9 @@ a:hover {
 #cr {
 	font-size:1.2vw;
 }
+
+#cssOk {
+	position:fixed;
+	bottom:3%;
+	right:5%;
+}
