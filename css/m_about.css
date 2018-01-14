@@ -22,7 +22,7 @@ ul {
     margin: 0;
 	margin-bottom:6%;
     padding: 0;
-} 
+}
 
 a {	
 	text-decoration:none;
@@ -30,7 +30,7 @@ a {
 
 a:hover {	
 	color:white;
-}
+} 
 
 .boton {
 	height:18%;

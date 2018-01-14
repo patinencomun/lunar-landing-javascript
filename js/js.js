@@ -34,8 +34,8 @@ var contador;
 var contadorOn=false;
 
 
-window.onload = function(){
-	
+window.onload = function(){	
+
 	// indicamos el archivo de audio a cargar
 	audioElement = document.createElement('audio');
 	audioElement.setAttribute('src', 'sound/8-bit-Arcade4.mp3'); 
@@ -114,7 +114,7 @@ window.onload = function(){
 	}
 
 
-	//CONFIRM	
+	//mensaje CONFIRM	
 	document.getElementsByClassName('aviso')[0].onclick = function(){
 		if(advert == false){
 			document.getElementById('adINSTRUCCIONES').style.display='block';
@@ -141,12 +141,13 @@ window.onload = function(){
 		}
 	}
 	
+	//botones SI/NO del mensaje CONFIRM
 	document.getElementById('siINS').onclick = function(){
-		location.href='https://rawgit.com/MariaAdrover/lunar-landing-javascript/v0.7/instrucciones.html';
+		location.href='file:///C:/Users/miaad/Desktop/Llenguatge%20de%20marques/LM_PRACTICA4/v0.7/instrucciones.html';
 	}
 	
 	document.getElementById('siAB').onclick = function(){
-		location.href='https://rawgit.com/MariaAdrover/lunar-landing-javascript/v0.7/about.html';
+		location.href='file:///C:/Users/miaad/Desktop/Llenguatge%20de%20marques/LM_PRACTICA4/v0.7/about.html';
 	}
 	
 	document.getElementById('noINS').onclick = function(){
@@ -174,22 +175,19 @@ window.onload = function(){
 	//REINICIAR
 	document.getElementsByClassName('reiniciar')[0].onclick = function(){
 		if(advert==false){
-			location.href='https://rawgit.com/MariaAdrover/lunar-landing-javascript/v0.7/index.html';
+			location.href='file:///C:/Users/miaad/Desktop/Llenguatge%20de%20marques/LM_PRACTICA4/v0.7/index.html';
 		}
 	}
 	document.getElementsByClassName('reiniciar')[1].onclick = function(){
 		if(advert==false){
-			location.href='https://rawgit.com/MariaAdrover/lunar-landing-javascript/v0.7/index.html';
+			location.href='file:///C:/Users/miaad/Desktop/Llenguatge%20de%20marques/LM_PRACTICA4/v0.7/index.html';
 		}
 	}
 	document.getElementsByClassName('reiniciar')[2].onclick = function(){
 		if(advert==false){
-			location.href='https://rawgit.com/MariaAdrover/lunar-landing-javascript/v0.7/index.html';
+			location.href='file:///C:/Users/miaad/Desktop/Llenguatge%20de%20marques/LM_PRACTICA4/v0.7/index.html';
 		}
 	}
-	
-	//INSTRUCCIONES
-	
 	
 	//MOTOR
 	//botón POWER (encender/apagar el motor)
@@ -212,24 +210,26 @@ window.onload = function(){
 	
 	//musica ON/OFF
 	document.getElementById("musicOn").addEventListener("click", function() {
-			if (musicOn){
-			// hacemos pausa
+		if (musicOn){
+		// hacemos pausa
 			if (screen.width>770){
 				if (aterrizado==false){
 					audioElement.pause();
 					musicOn = false;
-				}else{audioElement.pause();musicOn = false;}
+				}else{
+					audioElement.pause();musicOn = false;
+				}
 			}else{
 				audioElement.pause();
 				musicOn = false;
-			}
-			
+			}			
 			document.getElementById('musicOn').style.display='none';
 			document.getElementById('musicOff').style.display='block';
-			}});
+		}
+	});
 	
 	document.getElementById("musicOff").addEventListener("click", function() {
-			if (musicOn==false){
+		if (musicOn==false){
 			document.getElementById('musicOn').style.display='block';
 			document.getElementById('musicOff').style.display='none';
 			// Si deseamos que inicie siempre desde el principio
@@ -240,13 +240,16 @@ window.onload = function(){
 				if (aterrizado==false){
 					audioElement.play();
 					musicOn = true;
-				}else{audioElement.play();musicOn = true;}
+				}else{
+					audioElement.play();musicOn = true;
+				}
 			}else{
 				audioElement.play();
 				musicOn = true;
 			}
 			
-	}});
+		}
+	});
 
 	//EMPEZAR EL JUEGO
 	document.getElementById('facil').onclick = function (){
@@ -259,36 +262,19 @@ window.onload = function(){
 		if(advert == false){
 			nivelDificil();
 		}
-	}
-	
+	}	
 }
+
 
 //Definición de funciones
-/*function apagarMusica (){
-	audioElement.setAttribute('pause', 'pause');
-}*/
-function musicON (){
-	
-}
 
-function musicOFF (){
-	
-}
-
-function advertINSTRUCCIONES(){
-	
-}
-
-function advertABOUT(){
-	
-}
 
 function nivelFacil (){
-	document.getElementById('dificultad').style.display='none';
-	
+	document.getElementById('dificultad').style.display='none';	
 	nContador = 2;
 	contadorOn=true;
-	document.getElementById('contador3').style.display='block';		
+	document.getElementById('contador3').style.display='block';
+	document.getElementById('velocidad').innerHTML=v.toFixed(1);
 	contador=setInterval(cuentaAtras,1000);
 }
 
@@ -296,10 +282,12 @@ function nivelDificil (){
 	
 	//La música cambia según el nivel de dificultad
 	audioElement.setAttribute('src', 'sound/Fast Ace.wav'); 
-	if(musicOn==false){audioElement.pause();}
-	
+	if(musicOn==false){
+		audioElement.pause();
+	}	
 	document.getElementById('dificultad').style.display='none';
-	v=15;
+	v=15;	
+	document.getElementById('velocidad').innerHTML=v.toFixed(1);
 	dt=(dt*2);
 	c=50;
 	combustible.style.width="50%";
@@ -352,7 +340,7 @@ function teclaEspacioPulsada (){
 }
 
 function cambiarNave(){
-	if (nave<2){ //De momento sólo hay 2 modelos de nave
+	if (nave<2){ //Sólo hay 2 modelos de nave
 		nave++;
 	}else{
 		nave=1;

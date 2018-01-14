@@ -101,7 +101,6 @@ body{background:url(../img/cielo.jpeg) no-repeat fixed;}
 	
 .c{
 	z-index:3;
-	/*text-align:right;*/
 	position:fixed;
 	top:3%;
 	right:-25%;
@@ -112,7 +111,6 @@ body{background:url(../img/cielo.jpeg) no-repeat fixed;}
 .botonC:active {background-color: transparent;}
 
 .botonC {
-	/*display:block; botones uno encima de otro*/
 	width:40%;
 	padding:2%;
 	margin-bottom:10%;
@@ -153,7 +151,6 @@ body{background:url(../img/cielo.jpeg) no-repeat fixed;}
 #botonMenu1:hover {background-color: #0043E1;}
 #botonMenu2:hover {background-color: #0043E1;}
 #botonMenu3:hover {background-color: #0043E1;}
-/*#hidem:hover {background-color: #0043E1;}*/
 
 #botonMenu1{
 	position:absolute;
@@ -206,12 +203,6 @@ body{background:url(../img/cielo.jpeg) no-repeat fixed;}
 	display:block;
 }
 
-#bloque1{
-	
-}
-#bloque2{
-	
-}
 #bloque3{
 	height:20%;
 }

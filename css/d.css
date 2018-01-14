@@ -1,17 +1,6 @@
 body,html{height:100%;padding:0px;margin:0px;}
 body{background:url(../img/cielo.jpeg) no-repeat fixed center;}
 
-#inicio {}
-
-/*#facil, #dificil{
-	max-width:100%;
-	padding:2%;
-}*/
-
-/*#facil: hover{
-	background-color: #0043E1;
-}*/
-	
 .a{
 	position:fixed;
 	top:2%;
@@ -157,7 +146,6 @@ body{background:url(../img/cielo.jpeg) no-repeat fixed center;}
 #botonMenu1:hover {background-color: #0043E1;}
 #botonMenu2:hover {background-color: #0043E1;}
 #botonMenu3:hover {background-color: #0043E1;}
-/*#hidem:hover {background-color: #0043E1;}*/
 
 #botonMenu1{
 	position:absolute;
@@ -206,12 +194,6 @@ body{background:url(../img/cielo.jpeg) no-repeat fixed center;}
 	display:block;
 }
 
-#bloque1{
-	
-}
-#bloque2{
-	
-}
 #bloque3{
 	height:30%;
 }
