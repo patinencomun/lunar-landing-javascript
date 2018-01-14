@@ -194,20 +194,8 @@ window.onload = function(){
 	//MOTOR
 	//botón POWER (encender/apagar el motor)
 	document.getElementById('power').onclick = function () {
-		if (advert == false && screen.width>770){
+		if (advert == false){
 			botonPower ();
-		}
-	}
-	
-	document.getElementById('power').ontouchstart = function () {
-		if (advert == false && screen.width<=770){
-			teclaEspacioPulsada ();
-		}
-	}
-	
-	document.getElementById('power').ontouchend = function () {
-		if (advert == false && screen.width<=770){
-			motorOff();
 		}
 	}	
 	//teclado
