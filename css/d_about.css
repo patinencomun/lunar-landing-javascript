@@ -76,6 +76,13 @@ a:hover {
 	height:100%;
 }
 
+#musicOn:hover{
+	background-color: #0043E1;
+}
+#musicOff:hover{
+	background-color: #0043E1;
+}
+
 #cr {
 	font-size:1.2vw;
 }
