@@ -1,10 +1,201 @@
-body,html{height:100%;padding:0px;margin:0px;}
-.a{background-color:#00bcd4;}
-.b{background-color:red;}
-.c{background-color:#cddc39;display:block !important}
-.a,.b,.c{display:inline-block;width:33.33%;height:100%;float:left;}
-.d{background-color:pink;height:10%;width:100%;position:fixed;bottom:0px;}
-#nave{text-align:center;position:fixed;top:10%;width:100%;height:20%}
-#nave img{height:100%;}
+body,html{
+	height:100%;
+	padding:0px;
+	margin:0px;
+	font-family: Arial;
+}
+body{
+	background-image:url("../img/fondo.jpg");
+}
+.izquierda{}
+.centro{}
+.derecha{display:block !important}
+.izquierda,.centro,.derecha{
+	display:inline-block;
+	width:33.33%;
+	height:100%;
+	float:left;
+}
+.abajo{
+	background-image: url("../img/luna.png");
+	background-size: 60% 300%;
+	background-repeat: no-repeat;
+	background-position: 50% 0;
+	height:10%;
+	width:100%;
+	position:fixed;
+	bottom:0px;
+}
+#nave{
+	text-align:center;
+	position:fixed;
+	top:10%;
+	width:100%;
+	height:20%
+}
+#imgNave{height:100%;}
+#naveBlowUp{
+	display: none;
+	text-align:center;
+	position:fixed;
+	top:72%;
+	width:100%;
+	height:20%
+}
+#naveBlowUp img{
+	height: 100%;
+}
 #cpanel{}
 #hidem,#showm{display:none}
+
+.paneles{
+	position: relative;
+	height: 90px;
+	width: 180px;
+	background-color: #f7dc6f;
+	margin: 10px;
+	border-radius: 10px;
+	border-style: solid;
+	border-color: #fcf3cf;
+}
+.paneles img{
+	position: absolute;
+	height: 60px;
+	width: 60px;
+	margin-top: 15px;
+}
+#velocidad{
+	position: absolute;
+	right: 10px;
+	top: 30px;
+	font-size: x-large;
+}
+#altura{
+	position: absolute;
+	right: 10px;
+	top: 30px;
+	font-size: x-large;
+}
+#panelMovimientoBateria{
+	position: absolute;
+	background-color: #f1c40f;
+	height: 90px;
+	width: 100%;
+	border-radius: 10px;
+	max-width: 100%;
+	min-width: 0%;
+}
+#panelMovimientoBateriaMvl{
+	display: none;
+}
+.containerBotones{
+	margin-right: 35px;
+	height: auto;
+	width: auto;
+	float: right;
+}
+.botones:hover{
+	background-color: #f7dc6f;
+	transform: scale(1.2,1.2) rotate(10deg);
+	transition-duration: 0.2s;
+}
+
+.botones{
+	display: inline-block;
+	height: 90px;
+	width: 90px;
+	background-color: #f1c40f;
+	float: right;
+	margin: 10px;
+	border-radius: 50px;
+}
+.botones img{
+	position: absolute;
+	height: 60px;
+	width: 60px;
+	margin: 15px;	
+}
+#botonPlay:hover{
+	background-color: #f7dc6f;
+	transform: scale(1.2,1.2) rotate(10deg);
+	transition-duration: 0.2s;
+}
+
+#botonPlay{
+	display: none;
+	height: 90px;
+	width: 90px;
+	background-color: #f1c40f;
+	float: right;
+	margin: 10px;
+	border-radius: 50px;
+}
+#botonMvl{
+	display: none;
+}
+.botonesMvl{
+	display: none;
+}
+#botonPlayMvl{
+	display: none;
+}
+#botonPlay img{
+	position: absolute;
+	height: 60px;
+	width: 60px;
+	margin: 15px;	
+}
+#instrucciones{
+	display: none;
+	position: absolute;
+	height: auto;
+	width: 50%;
+	left: 20%;
+	top: 10%;
+	z-index: 1;
+	background-color: #f7dc6f;
+	border-radius: 10px;
+	border-style: solid;
+	border-color: #fcf3cf;
+	text-align: center;
+	margin-left: 5%;
+	margin-right: 5%;
+}
+#instrucciones h1{
+display: block;
+
+}
+#instrucciones p{
+	display: block;
+	text-align: center;
+}
+
+#final{
+	display: none;
+	position: absolute;
+	height: auto;
+	width: 50%;
+	left: 20%;
+	top: 10%;
+	z-index: 1;
+	background-color: #f7dc6f;
+	border-radius: 10px;
+	border-style: solid;
+	border-color: #fcf3cf;
+	text-align: center;
+	margin-left: 5%;
+	margin-right: 5%;
+}
+#mvlReiniciar{
+	display: none;
+}
+#acercaDe{
+	border-radius: 10px;
+	border-style: solid;
+	border-color: #fcf3cf;
+	background-color: #f7dc6f;
+	margin-bottom: 10px;
+}
+#botonGasMvl{
+	display: none;
+}

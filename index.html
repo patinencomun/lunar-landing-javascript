@@ -1,32 +1,84 @@
 <!DOCTYPE html>
 <html>
-<head>
- <title>Lunar Lander</title>
- <meta name="description" content="">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <link rel='stylesheet' media='screen and (min-width: 961px)' href='css/d.css'>
- <link rel='stylesheet' media='screen and (max-width: 960px)' href='css/m.css'>
- <script src="js/js.js"></script>
-</head>
-<body>
- <div id="nave">
- <img src="img/nave.png" alt="img nave">
- </div>
- <div class="a">
- <div id="showm">show menu</div>
- <ul id="cpanel">
-  <li>Velocidad <span id="velocidad">100</span> m/s</li>
-  <li>Fuel <span id="fuel">100</span> l</li>
-  <li>Altura <span id="altura">70</span> m</li>
- </ul>
- </div><div class="b">b</div><div class="c">
- <div id="hidem">hide menu</div>
- <ul id="menu">
-  <li>Jugar</li>
-  <li>Instrucciones</li>
-  <li>Acerca de...</li>
- </ul>
- </div>
- <div class="d">d</div>
-</body>
+	<head>
+		<meta charset="UTF-8">
+		<title>Lunar Lander</title>
+		<meta name="description" content="This webpage is a game called lunar lander, programmed with html, css and javascript">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel='stylesheet' media='screen and (min-width: 961px)' href='css/d.css'>
+		<link rel='stylesheet' media='screen and (max-width: 960px)' href='css/m.css'>
+		<script src="js/js.js"></script>
+	</head>
+	<body>
+		<div id="final">
+			<h1 class="finalE">!Enhorabuena!</h1>
+			<p class="finalE">Has aterrizado la nave correctamente.</p>
+			<h1 class="finalE">!Inténtalo de nuevo!</h1>
+			<p class="finalE">El aterrizaje debe ser a una velocidad menor que 5 m/s</p>
+			<button id="mvlReiniciar">Reiniciar</button>
+		</div>
+		<div id="instrucciones">
+			<h1>Objetivo</h1>
+			<p>Aterrizar la nave a una velocidad inferior a 5 m/s</p>
+			<h1>Instrucciones</h1>
+			<p>Frenar la velocidad de caída utilizando el motor, tecla ESPACIO para la versión de PC y apretar el botón de gas situado abajo a la derecha para la versión de smartphone</p>
+			<button id="acercaDe">Acerca de</button>
+		</div>
+		<div id="nave">
+			<img id="imgNave" src="img/nave1.jpg" alt="img nave">
+		</div>
+		<div id="naveBlowUp">
+			<img src="img/naveBlowUp.gif" alt="gif de explosion">
+		</div>
+		<div class="izquierda">
+			<div class="paneles">
+				<span id="velocidad">100</span>
+				<img src="img/icons/velMaterial.png" alt="img icono velocidad">	
+			</div>
+			<div class="paneles">
+				<span id="altura">70</span>
+				<img src="img/icons/altMaterial.png" alt="img icono altura">	
+			</div>
+			<div class="paneles">
+				<!--A CONTINUACIÓN LA BARRA QUE TENDRÁ MOVIMIENTO-->
+				<div id="panelMovimientoBateria"></div>
+				<div id="panelMovimientoBateriaMvl"></div>
+				<img src="img/icons/batteryMaterial.png" alt="img icono bateria">
+			</div>	
+		</div>
+		<div class="centro"></div>
+		<div class="derecha">
+		 	<!--BOTONES-->
+			<div class="containerBotones">
+				<div id="botonMvl">
+					<img src="img/buttons/menuMaterial.png" alt="img boton menu">
+				</div>
+				<div class="botonesMvl">
+					<img src="img/buttons/questMaterial.png" alt="img boton interrogante">
+				</div>
+				<div class="botonesMvl">
+					<img src="img/buttons/resetMaterial.png" alt="img boton reset">
+				</div>
+				<div id="botonPlayMvl">
+					<img src="img/buttons/playMaterial.png" alt="img boton play">
+				</div>
+				<div class="botones">
+					<img src="img/buttons/questMaterial.png" alt ="img boton interrogante">
+				</div>
+				<div class="botones">
+					<img src="img/buttons/resetMaterial.png" alt="img boton reset">
+				</div>
+				<div class="botones">
+					<img src="img/buttons/pauseMaterial.png" alt="img boton pause">
+				</div>
+				<div id="botonPlay">
+					<img src="img/buttons/playMaterial.png" alt="img boton play">
+				</div>
+			</div>
+			<div id="botonGasMvl">
+				<img src="img/buttons/gasMaterial.png" alt="img gas">
+			</div>
+		</div>
+		<div class="abajo"></div>
+	</body>
 </html>
