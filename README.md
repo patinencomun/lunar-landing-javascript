@@ -27,7 +27,6 @@ Se ha introducido un botón de instrucciones que a su vez te da la opción de ir
 
 + ##### Botón versión smartphone: 
 En la versión de móvil, debido a la reducción del espacio, he tenido que modificar el panel de los botones e introducir un nuevo botón que despliegue los demás.  
-![botón menú](img/buttons/menuMaterial.png "Icono") 
 ![menú móvil](img/readme/menumvl.png "Imágen") 
 
 + ##### Botón acelerar smartphone: 
