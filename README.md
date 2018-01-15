@@ -11,7 +11,7 @@ Se nos ha proporcionado una versión esqueleto con estas características:
 * No dispone de imágenes.
 
 
-##Proyecto:
+## Proyecto:
 + ##### Iconos:
 Todas las imágenes de los iconos e imágenes han sido procesadas para que tengan un tamaño pequeño.  
 ![icono batería](img/icons/batteryMaterial.png "Icono") 
