@@ -1,0 +1,31 @@
+body,html{
+	height:100%;
+	padding:0px;
+	margin:0px;
+	font-family: Arial;
+}
+body{
+	background-image:url("../img/fondo.jpg");
+}
+#container{
+	display: block;
+	position: absolute;
+	height: auto;
+	width: 70%;
+	left: 15%;
+	top: 15%;
+	background-color: #f7dc6f;
+	border-radius: 10px;
+	border-style: solid;
+	border-color: #fcf3cf;
+	text-align: center;
+	font-size: 25px;
+}
+#volver{
+	border-radius: 10px;
+	border-style: solid;
+	border-color: #fcf3cf;
+	background-color: #f7dc6f;
+	margin-bottom: 10px;
+	font-size: 30px;
+}

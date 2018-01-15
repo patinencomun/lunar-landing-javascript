@@ -1,9 +1,236 @@
-body,html{height:100%;padding:0px;margin:0px;}
-.a{background-color:#00bcd4;width:100%;height:90px;overflow:hidden;position:fixed;top:0px}
-.b{background-color:red;width:100%;height:100%;overflow:hidden;}
-.c{background-color:#cddc39;position:fixed;top:0px;bottom:0px;left:0px;right:0px;display:none;z-index:1}
-.d{background-color:pink;position:fixed;bottom:0px;height:10%;width:100%;}
-#nave{text-align:center;position:fixed;top:10%;width:100%;height:20%}
-#nave img{height:100%;}
+body,html{
+	height:100%;
+	padding:0px;
+	margin:0px;
+	font-family: Arial;
+}
+body{
+	background-image:url("../img/fondo.jpg");
+}
+.izquierda{}
+.centro{}
+.derecha{display:block !important}
+.izquierda,.centro,.derecha{
+	display:inline-block;
+	width:33.33%;
+	height:100%;
+	float:left;
+}
+.abajo{
+	background-image: url("../img/luna.png");
+	background-size: 60% 300%;
+	background-repeat: no-repeat;
+	background-position: 50% 0;
+	height:10%;
+	width:100%;
+	position:fixed;
+	bottom:0px;
+}
+#nave{
+	text-align:center;
+	position:fixed;
+	top:10%;
+	width:100%;
+	height:20%
+}
+#naveBlowUp{
+	display: none;
+	text-align:center;
+	position:fixed;
+	top:72%;
+	width:100%;
+	height:20%
+}
+#naveBlowUp img{
+	height: 100%;
+}
+#imgNave{height:100%;}
 #cpanel{}
-#hidem,#showm{float:right}
+#hidem,#showm{display:none}
+
+.paneles{
+	position: relative;
+	height: 180px;
+	width: 70px;
+	background-color: #f7dc6f;
+	margin: 10px;
+	border-radius: 10px;
+	border-style: solid;
+	border-color: #fcf3cf;
+}
+.paneles img{
+	position: absolute;
+	height: 60px;
+	width: 60px;
+	margin-left: 5px;
+	margin-top: 110px;
+}
+#velocidad{
+	position: absolute;
+	right: 10px;
+	top: 30px;
+	font-size: x-large;
+}
+#altura{
+	position: absolute;
+	right: 10px;
+	top: 30px;
+	font-size: x-large;
+}
+#panelMovimientoBateria{
+	display: none;
+}
+#panelMovimientoBateriaMvl{
+	position: absolute;
+	background-color: #f1c40f;
+	height: 100%;
+	width: 70px;
+	border-radius: 10px;
+	max-height: 100%;
+	bottom: 0px;
+	min-height: 0%;
+}
+.containerBotones{
+	margin-top: 10px;
+	margin-right: 10px;
+	height: auto;
+	width: auto;
+	float: right;
+}
+.botonesMvl:hover{
+	background-color: #f7dc6f;
+	transform: scale(1.2,1.2) rotate(10deg);
+	transition-duration: 0.2s;
+}
+#botonMvl{
+	display: inline-block;
+	height: 70px;
+	width: 70px;
+	background-color: #f1c40f;
+	float: right;
+	margin: 10px;
+	border-radius: 50px;
+}
+#botonMvl img{
+	position: absolute;
+	height: 50px;
+	width: 50px;
+	margin: 10px;	
+}
+#botonMvl:hover{
+	background-color: #f7dc6f;
+	transform: scale(1.2,1.2) rotate(10deg);
+	transition-duration: 0.2s;
+}
+.botonesMvl{
+	display: none;
+	height: 70px;
+	width: 70px;
+	background-color: #f1c40f;
+	float: right;
+	margin: 10px;
+	border-radius: 50px;
+}
+.botonesMvl img{
+	position: absolute;
+	height: 50px;
+	width: 50px;
+	margin: 10px;	
+}
+#botonPlayMvl:hover{
+	background-color: #f7dc6f;
+	transform: scale(1.2,1.2) rotate(10deg);
+	transition-duration: 0.2s;
+}
+
+#botonPlayMvl{
+	display: none;
+	height: 70px;
+	width: 70px;
+	background-color: #f1c40f;
+	float: right;
+	margin: 10px;
+	border-radius: 50px;
+}
+#botonPlayMvl img{
+	position: absolute;
+	height: 50px;
+	width: 50px;
+	margin: 10px;	
+}
+.botones{
+	display: none;
+}
+#botonPlay{
+	display: none;
+}
+#instrucciones{
+	display: none;
+	position: absolute;
+	height: auto;
+	width: 70%;
+	left: 10px;
+	top: 1%;
+	z-index: 1;
+	background-color: #f7dc6f;
+	border-radius: 10px;
+	border-style: solid;
+	border-color: #fcf3cf;
+	text-align: center;
+	margin-left: 0px;
+	margin-right: 5%;
+}
+#instrucciones h1{
+display: block;
+
+}
+#instrucciones p{
+	display: block;
+	text-align: center;
+}
+#final{
+	display: none;
+	position: absolute;
+	height: auto;
+	width: 70%;
+	right: 10px;
+	top: 1%;
+	z-index: 1;
+	background-color: #f7dc6f;
+	border-radius: 10px;
+	border-style: solid;
+	border-color: #fcf3cf;
+	text-align: center;
+}
+#mvlReiniciar{
+	border-radius: 10px;
+	border-style: solid;
+	border-color: #fcf3cf;
+	background-color: #f7dc6f;
+	margin-bottom: 10px;
+}
+#acercaDe{
+	border-radius: 10px;
+	border-style: solid;
+	border-color: #fcf3cf;
+	background-color: #f7dc6f;
+	margin-bottom: 10px;
+}
+#botonGasMvl{
+	position: absolute;
+	display: block;
+	height: 70px;
+	width: 70px;
+	background-color: #f1c40f;
+	float: right;
+	bottom: 0%;
+	right: 0%;
+	margin: 10px;
+	border-radius: 50px;
+	z-index: 1;
+}
+#botonGasMvl img{
+	height: 50px;
+	width: 50px;
+	margin: 10px;	
+}
