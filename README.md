@@ -33,6 +33,9 @@ En la versión de móvil, debido a la reducción del espacio, he tenido que modi
 Para acelerar en la versión de móvil, he introducido un nuevo botón.  
 ![botón acelerar](img/buttons/gasMaterial.png "Icono") 
 
++ ##### Imágen nave en movimiento:  
+![nave gif](img/nave2.gif "Icono") 
+
 + ##### Presentación escritorio:  
 ![escritorio](img/readme/escritorio.png "Imágen") 
 
