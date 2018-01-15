@@ -29,8 +29,9 @@ window.onload = function(){
 	
 	//definición de eventos
 	//BOTONES EVENTOS
-	document.getElementById("acercaDe").onclick = function(){
 
+	document.getElementById("acercaDe").onclick = function(){
+		cambiarPagAbout();
 	}
 	document.getElementById("mvlReiniciar").onclick = function(){
 		resetMvl();
@@ -285,4 +286,7 @@ function instruccionesMvl(){
 	stop();
 	document.getElementById("instrucciones").style.display = "inline-block";
 	aterrizado = true;
+}
+function cambiarPagAbout(){
+	location.href="acercaDe.html";
 }
